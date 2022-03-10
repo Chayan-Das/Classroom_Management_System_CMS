@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "86123047795",
+    "project_id": "classroom-management-fa917",
+    "storage_bucket": "classroom-management-fa917.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:86123047795:android:e8aa65f5711f123e11b306",
+        "android_client_info": {
+          "package_name": "com.example.classroommanagementsystemcms"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "86123047795-bphqpquijpuop9knaqmu8o0jhtnivtal.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0xZTcnjoE2kW6gR-x9Eew63eqkBrsvtk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "86123047795-bphqpquijpuop9knaqmu8o0jhtnivtal.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
