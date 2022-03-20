@@ -23,7 +23,6 @@
                 android:orientation="vertical">
 
 
-
                 <RelativeLayout
                     android:id="@+id/portion1"
                     android:layout_width="match_parent"
@@ -35,7 +34,7 @@
                         android:id="@+id/d1"
                         android:layout_width="160dp"
                         android:layout_height="120dp"
-                        android:background="@drawable/circle"
+                        android:background="@drawable/right_corner"
                         android:orientation="vertical">
 
                         <ImageView
@@ -43,7 +42,7 @@
                             android:layout_height="100dp"
                             android:layout_marginLeft="10dp"
                             android:src="@drawable/logo_1"
-                            app:tint="@color/black" />
+                            app:tint="@color/primary" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -64,8 +63,8 @@
                             android:fontFamily="serif"
                             android:text="Have any account?"
                             android:textAlignment="center"
+                            android:textColor="@color/white"
                             android:textSize="19sp"
-                            android:textColor="@color/black"
 
                             android:textStyle="bold" />
 
@@ -141,15 +140,15 @@
 
 
                 <com.google.android.material.button.MaterialButton
-                    android:layout_below="@+id/forgetpassword"
                     android:id="@+id/login"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_below="@+id/forgetpassword"
                     android:layout_marginLeft="30dp"
                     android:layout_marginTop="40dp"
                     android:layout_marginRight="30dp"
                     android:text="Login"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/white" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/createnew"
@@ -181,9 +180,9 @@
 
     <LinearLayout
         android:id="@+id/portion3"
-        android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
         android:layout_height="120dp"
+        android:layout_alignParentBottom="true"
         android:background="@drawable/ic_wave"
         android:backgroundTint="@color/primary"
         android:orientation="vertical"

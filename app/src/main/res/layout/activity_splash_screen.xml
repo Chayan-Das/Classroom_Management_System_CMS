@@ -14,7 +14,7 @@
         android:layout_centerInParent="true"
         android:contentDescription="@string/todo"
         android:src="@drawable/logo"
-        app:tint="#000000" />
+        app:tint="@color/white" />
 
 
     <com.airbnb.lottie.LottieAnimationView
