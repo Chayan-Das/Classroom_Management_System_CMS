@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.classroommanagementsystemcms.HelperClass.StudentHelperClass;
@@ -25,7 +26,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class Signup extends AppCompatActivity {
 
     TextInputLayout Name,Id,Email,Password;
-    MaterialButton Create;
+    Button Create;
     FirebaseDatabase rootNode;
     DatabaseReference reference;
     private FirebaseAuth fAuth;
@@ -135,11 +136,14 @@ public class Signup extends AppCompatActivity {
         String roll = Id.getEditText().getText().toString();
         String email = Email.getEditText().getText().toString();
         String password = Password.getEditText().getText().toString();
+        String role = "student";
+        String batch = "2k"+roll.substring(0,2);
+
 
         if (!TextUtils.isEmpty(fullname)){
 
             String id = reference.push().getKey();
-            StudentHelperClass superAdminHelperClass= new StudentHelperClass(fullname,email,password,roll);
+            StudentHelperClass superAdminHelperClass= new StudentHelperClass(fullname,email,password,roll,role,batch);
 
             reference.child(roll).setValue(superAdminHelperClass);
 

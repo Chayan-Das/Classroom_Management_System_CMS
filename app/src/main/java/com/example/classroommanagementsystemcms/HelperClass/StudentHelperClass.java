@@ -6,16 +6,20 @@ public class StudentHelperClass {
     String email;
     String password;
     String roll;
+    String role;
+    String batch;
 
     public StudentHelperClass(){
 
     }
 
-    public StudentHelperClass(String fullname, String email, String password, String roll) {
+    public StudentHelperClass(String fullname, String email, String password, String roll, String role, String batch) {
         this.fullname = fullname;
         this.email = email;
         this.password = password;
         this.roll = roll;
+        this.role = role;
+        this.batch = batch;
     }
 
     public String getFullname() {
@@ -48,5 +52,21 @@ public class StudentHelperClass {
 
     public void setRoll(String roll) {
         this.roll = roll;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    public String getBatch() {
+        return batch;
+    }
+
+    public void setBatch(String batch) {
+        this.batch = batch;
     }
 }

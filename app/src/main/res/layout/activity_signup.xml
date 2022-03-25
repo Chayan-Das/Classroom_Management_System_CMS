@@ -6,29 +6,45 @@
     android:layout_height="match_parent"
     tools:context=".account.Signup">
 
+
     <LinearLayout
         android:id="@+id/chip1"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@color/text_color"
+        android:gravity="center"
         android:orientation="vertical">
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
             android:fontFamily="serif"
-            android:text="Create Account"
+            android:text="@string/create_account"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="25sp"
             android:textStyle="bold"
             tools:ignore="RtlCompat" />
 
+        <ImageButton
+            android:layout_width="45dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="-50dp"
+            android:background="@null"
+            android:layout_marginStart="10dp"
+            android:src="@drawable/ic_baseline_arrow_back_ios_24"
+            app:tint="@color/white"
+            android:contentDescription="TODO"
+            tools:ignore="ContentDescription" />
+
+
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/a"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:layout_below="@+id/chip1"
@@ -39,11 +55,31 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_below="@+id/a"
+        android:gravity="center"
+        android:layout_marginTop="-40dp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/logo_1"
+            android:layout_centerHorizontal="true"
+            app:tint="@color/primary" />
+
+    </LinearLayout>
+
+
+
+
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="130dp"
+        android:layout_marginTop="240dp"
         android:layout_marginBottom="80dp">
 
         <LinearLayout
@@ -144,16 +180,9 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/create"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/password"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginRight="30dp"
-                    android:text="Create"
-                    android:textColor="@color/white" />
+
+
+
 
 
 
@@ -165,14 +194,14 @@
 
     </ScrollView>
 
-    <LinearLayout
-        android:id="@+id/portion3"
+    <Button
+        android:id="@+id/create"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="@drawable/ic_wave1"
-        android:backgroundTint="@color/primary"
-        android:orientation="vertical"
-        android:rotation="180" />
+        android:text="Create Account"
+        android:textStyle="bold"
+        android:background="@color/primary"
+        android:textColor="@color/white" />
 
 </RelativeLayout>

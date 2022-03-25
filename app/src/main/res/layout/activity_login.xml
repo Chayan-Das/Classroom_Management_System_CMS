@@ -14,13 +14,14 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
             >
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                tools:ignore="UselessParent">
 
 
                 <RelativeLayout
@@ -40,9 +41,10 @@
                         <ImageView
                             android:layout_width="100dp"
                             android:layout_height="100dp"
-                            android:layout_marginLeft="10dp"
+                            android:layout_marginStart="10dp"
                             android:src="@drawable/logo_1"
-                            app:tint="@color/primary" />
+                            app:tint="@color/primary"
+                            tools:ignore="ContentDescription" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -155,8 +157,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/login"
-                    android:layout_marginTop="10dp"
                     android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
                     android:gravity="end"
                     android:text="Create Account"
                     android:textAlignment="viewEnd"
