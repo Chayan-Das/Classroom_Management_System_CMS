@@ -8,7 +8,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.classroommanagementsystemcms"
-        minSdk 19
+        minSdk 27
         targetSdk 31
         versionCode 1
         versionName "1.0"
@@ -53,7 +53,7 @@ dependencies {
 
     implementation "androidx.drawerlayout:drawerlayout:1.1.1"
 
-
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
 
 
 
