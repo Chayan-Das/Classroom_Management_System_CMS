@@ -1,7 +1,29 @@
 <resources>
     <string name="app_name">Project</string>
     <string name="Account">Already have an Account?</string>
-    <string name="todo">TODO</string>
+    <string name="login_here">Login Here !</string>
     <string name="email">Email</string>
+    <string name="forgot_password">Forgot password?</string>
     <string name="create_account">Create Account</string>
+    <string name="login">Login</string>
+    <string name="todo">TODO</string>
+    <string name="password">Password</string>
+    <string name="full_name">Full Name</string>
+    <string name="student_id">Student Id</string>
+    <string name="no_connection">No Connection</string>
+    <string name="role">Role</string>
+    <string name="name">Name :</string>
+    <string name="s_id">S.id :</string>
+    <string name="batch">Batch :</string>
+    <string name="xxxx">xxxx</string>
+    <string name="create_teacher">Create Teacher</string>
+    <string name="designation">Designation</string>
+    <string name="close">Close</string>
+
+    <array name="teacher">
+        <item>Lecturer</item>
+        <item>Assistant Professor</item>
+        <item>Associate Professor</item>
+        <item>Professor</item>
+    </array>
 </resources>

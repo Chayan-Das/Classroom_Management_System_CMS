@@ -37,7 +37,7 @@
         android:layout_alignParentBottom="true"
         android:background="#FD0000"
         android:padding="5dp"
-        android:text="No Connection"
+        android:text="@string/no_connection"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textStyle="bold"

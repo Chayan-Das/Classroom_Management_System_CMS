@@ -4,26 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".account.Signup">
+    tools:context=".Teacher.AddTeacher">
 
-
-    <LinearLayout
+    <com.google.android.material.card.MaterialCardView
         android:id="@+id/chip1"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@color/text_color"
-        android:gravity="center"
-        android:orientation="vertical">
+        android:layout_margin="10dp"
+        tools:ignore="UselessParent">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:fontFamily="serif"
-            android:text="@string/create_account"
+            android:gravity="center"
+            android:fontFamily="sans-serif-black"
+            android:text="@string/create_teacher"
             android:textAlignment="center"
-            android:textColor="@color/white"
+            android:layout_gravity="center"
+            android:textColor="@color/primary"
             android:textSize="25sp"
             android:textStyle="bold"
             tools:ignore="RtlCompat" />
@@ -31,85 +29,20 @@
         <ImageButton
             android:layout_width="45dp"
             android:layout_height="match_parent"
-            android:layout_gravity="center_vertical"
-            android:layout_marginTop="-50dp"
             android:background="@null"
             android:layout_marginStart="10dp"
             android:src="@drawable/ic_baseline_arrow_back_ios_24"
-            app:tint="@color/white"
+            app:tint="@color/primary"
             android:contentDescription="@string/todo"
             tools:ignore="ContentDescription" />
 
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/a"
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:layout_below="@+id/chip1"
-        android:background="@drawable/ic_wave1"
-        android:backgroundTint="@color/text_color"
-        android:orientation="vertical">
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="180dp"
-        android:layout_height="30dp"
-        android:layout_below="@+id/a"
-        android:gravity="center"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="20dp"
-        android:orientation="horizontal">
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:cardBackgroundColor="#19851D"
-            style="@style/CardView">
-
-
-            <TextView
-                android:layout_width="140dp"
-                android:layout_height="match_parent"
-                android:fontFamily="serif"
-                android:gravity="center"
-                android:layout_marginStart="10dp"
-                android:text="! Only for students"
-                android:textAlignment="textStart"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                tools:ignore="RtlCompat" />
-
-            <ImageButton
-                android:id="@+id/close"
-                android:layout_width="10dp"
-                android:layout_height="10dp"
-                android:background="@null"
-                android:layout_marginStart="160dp"
-                android:layout_gravity="center_vertical"
-                android:src="@drawable/ic_baseline_close_24"
-                app:tint="@color/white" />
-
-
-
-
-        </androidx.cardview.widget.CardView>
-
-
-
-    </LinearLayout>
-
-
-
-
+    </com.google.android.material.card.MaterialCardView>
 
     <ScrollView
+        android:layout_below="@id/chip1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="240dp"
         android:layout_marginBottom="80dp">
 
         <LinearLayout
@@ -117,17 +50,30 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 tools:ignore="UselessParent">
 
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/pro_image"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/ic_outline_person_24"
+                    android:tint="@color/white"
+                    app:civ_border_color="@color/primary"
+                    app:civ_border_width="1dp" />
+
                 <com.google.android.material.textfield.TextInputLayout
+                    android:layout_below="@+id/pro_image"
                     android:id="@+id/name"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="20dp"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
                     android:hint="@string/full_name"
@@ -143,26 +89,41 @@
                         android:inputType="textPersonName" />
                 </com.google.android.material.textfield.TextInputLayout>
 
+                <Spinner
+                    android:id="@+id/designation"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_below="@id/name"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/bottom_button"
+                    android:dropDownSelector="@color/primary"
+                    android:ems="5"
+                    android:entries="@array/teacher"
+                    android:fontFamily="serif"
+                    android:padding="10dp" />
+
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/roll"
-                    android:layout_below="@id/name"
+                    android:layout_below="@id/designation"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
-                    android:hint="@string/student_id"
+                    android:hint="Phone no"
                     android:textColorHint="@color/primary"
                     app:boxStrokeColor="@color/primary"
-                    app:startIconDrawable="@drawable/ic_baseline_edit_24"
+                    app:startIconDrawable="@drawable/ic_outline_phone_android_24"
                     app:endIconMode="clear_text"
                     app:startIconTint="@color/primary">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="number" />
+                        android:inputType="phone" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
