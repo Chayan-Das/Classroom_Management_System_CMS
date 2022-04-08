@@ -31,9 +31,10 @@
         <item name="android:windowLightStatusBar">true</item>
 
         <!-- Customize your theme here. -->
-        <item name="android:navigationBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <item name="android:navigationBarColor" tools:targetApi="l">?attr/colorOnPrimary</item>
         <item name="android:windowBackground" tools:targetApi="l">?attr/colorPrimaryVariant</item>
-        <item name="android:windowLightNavigationBar">true</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="l">true</item>
+
 
     </style>
 

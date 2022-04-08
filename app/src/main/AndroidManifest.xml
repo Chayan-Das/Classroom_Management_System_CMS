@@ -10,15 +10,33 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ClassroomManagementSystemCMS">
         <activity
+            android:name=".Teacher.TeacherDashboard"
+            android:exported="false" />
+        <activity
             android:name=".Teacher.AddTeacher"
-            android:exported="true">
-
-
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".Student.StudentDashboard"
             android:exported="true"
             android:theme="@style/Theme.ClassroomManagementSystemCMS1">
+
+        </activity>
+        <activity
+            android:name=".account.Signup"
+            android:exported="true" />
+        <activity
+            android:name=".SplashScreen"
+            android:exported="false" />
+        <activity
+            android:name=".account.Login"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".BookClass"
+            android:exported="true">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,19 +45,6 @@
             </intent-filter>
 
         </activity>
-        <activity
-            android:name=".account.Signup"
-            android:exported="true"/>
-
-        <activity
-            android:name=".SplashScreen"
-            android:exported="false"/>
-        <activity
-            android:name=".account.Login"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="false"/>
     </application>
 
 </manifest>

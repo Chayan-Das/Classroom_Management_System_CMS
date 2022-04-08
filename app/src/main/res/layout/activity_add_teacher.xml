@@ -191,9 +191,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:text="@string/create_account"
-        android:textStyle="bold"
         android:background="@color/primary"
-        android:textColor="@color/white" />
+        android:text="@string/create_account"
+        android:textColor="@color/white"
+        android:textStyle="bold" />
 
 </RelativeLayout>

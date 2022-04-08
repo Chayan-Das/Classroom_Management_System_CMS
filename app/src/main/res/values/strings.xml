@@ -26,4 +26,13 @@
         <item>Associate Professor</item>
         <item>Professor</item>
     </array>
+
+    <array name="c">
+        <item>Course Code</item>
+        <item>Assistant Professor</item>
+        <item>Associate Professor</item>
+        <item>Professor</item>
+    </array>
+
+
 </resources>
