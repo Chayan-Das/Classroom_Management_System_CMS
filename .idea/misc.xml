@@ -10,22 +10,31 @@
         <entry key="..\:/Users/88017/AndroidStudioProjects/Classroom_Management_System_CMS/app/src/main/res/drawable/bottom_button.xml" value="0.186" />
         <entry key="..\:/Users/88017/AndroidStudioProjects/Classroom_Management_System_CMS/app/src/main/res/drawable/circle.xml" value="0.113" />
         <entry key="..\:/Users/88017/AndroidStudioProjects/Classroom_Management_System_CMS/app/src/main/res/drawable/dashboard.xml" value="0.168" />
+        <entry key="..\:/Users/88017/AndroidStudioProjects/Classroom_Management_System_CMS/app/src/main/res/drawable/ic_baseline_access_time_24.xml" value="0.1555" />
         <entry key="..\:/Users/88017/AndroidStudioProjects/Classroom_Management_System_CMS/app/src/main/res/drawable/ic_baseline_arrow_back_ios_24.xml" value="0.137" />
         <entry key="..\:/Users/88017/AndroidStudioProjects/Classroom_Management_System_CMS/app/src/main/res/drawable/ic_baseline_cancel_24.xml" value="0.164" />
+        <entry key="..\:/Users/88017/AndroidStudioProjects/Classroom_Management_System_CMS/app/src/main/res/drawable/ic_baseline_close_24.xml" value="0.1555" />
         <entry key="..\:/Users/88017/AndroidStudioProjects/Classroom_Management_System_CMS/app/src/main/res/drawable/ic_baseline_dashboard_24.xml" value="0.137" />
         <entry key="..\:/Users/88017/AndroidStudioProjects/Classroom_Management_System_CMS/app/src/main/res/drawable/ic_baseline_edit_24.xml" value="0.137" />
+        <entry key="..\:/Users/88017/AndroidStudioProjects/Classroom_Management_System_CMS/app/src/main/res/drawable/ic_baseline_keyboard_arrow_up_24.xml" value="0.1555" />
         <entry key="..\:/Users/88017/AndroidStudioProjects/Classroom_Management_System_CMS/app/src/main/res/drawable/ic_baseline_menu_book_24.xml" value="0.1725" />
         <entry key="..\:/Users/88017/AndroidStudioProjects/Classroom_Management_System_CMS/app/src/main/res/drawable/ic_baseline_notifications_24.xml" value="0.1725" />
         <entry key="..\:/Users/88017/AndroidStudioProjects/Classroom_Management_System_CMS/app/src/main/res/drawable/ic_baseline_notifications_active_24.xml" value="0.137" />
         <entry key="..\:/Users/88017/AndroidStudioProjects/Classroom_Management_System_CMS/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.1725" />
         <entry key="..\:/Users/88017/AndroidStudioProjects/Classroom_Management_System_CMS/app/src/main/res/drawable/ic_baseline_power_settings_new_24.xml" value="0.1725" />
         <entry key="..\:/Users/88017/AndroidStudioProjects/Classroom_Management_System_CMS/app/src/main/res/drawable/ic_baseline_settings_24.xml" value="0.137" />
+        <entry key="..\:/Users/88017/AndroidStudioProjects/Classroom_Management_System_CMS/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1555" />
         <entry key="..\:/Users/88017/AndroidStudioProjects/Classroom_Management_System_CMS/app/src/main/res/drawable/ic_outline_add_a_photo_24.xml" value="0.136" />
+        <entry key="..\:/Users/88017/AndroidStudioProjects/Classroom_Management_System_CMS/app/src/main/res/drawable/ic_outline_calendar_today_24.xml" value="0.1555" />
         <entry key="..\:/Users/88017/AndroidStudioProjects/Classroom_Management_System_CMS/app/src/main/res/drawable/ic_outline_dashboard_24.xml" value="0.137" />
+        <entry key="..\:/Users/88017/AndroidStudioProjects/Classroom_Management_System_CMS/app/src/main/res/drawable/ic_outline_laptop_chromebook_24.xml" value="0.1555" />
+        <entry key="..\:/Users/88017/AndroidStudioProjects/Classroom_Management_System_CMS/app/src/main/res/drawable/ic_outline_lock_24.xml" value="0.1555" />
         <entry key="..\:/Users/88017/AndroidStudioProjects/Classroom_Management_System_CMS/app/src/main/res/drawable/ic_outline_notifications_active_24.xml" value="0.137" />
         <entry key="..\:/Users/88017/AndroidStudioProjects/Classroom_Management_System_CMS/app/src/main/res/drawable/ic_outline_person_24.xml" value="0.1725" />
+        <entry key="..\:/Users/88017/AndroidStudioProjects/Classroom_Management_System_CMS/app/src/main/res/drawable/ic_outline_phone_android_24.xml" value="0.1555" />
         <entry key="..\:/Users/88017/AndroidStudioProjects/Classroom_Management_System_CMS/app/src/main/res/drawable/ic_outline_power_settings_new_24.xml" value="0.1725" />
         <entry key="..\:/Users/88017/AndroidStudioProjects/Classroom_Management_System_CMS/app/src/main/res/drawable/ic_outline_settings_24.xml" value="0.137" />
+        <entry key="..\:/Users/88017/AndroidStudioProjects/Classroom_Management_System_CMS/app/src/main/res/drawable/ic_outline_text_fields_24.xml" value="0.1555" />
         <entry key="..\:/Users/88017/AndroidStudioProjects/Classroom_Management_System_CMS/app/src/main/res/drawable/ic_wave1.xml" value="0.113" />
         <entry key="..\:/Users/88017/AndroidStudioProjects/Classroom_Management_System_CMS/app/src/main/res/drawable/right_corner.xml" value="0.113" />
         <entry key="..\:/Users/88017/AndroidStudioProjects/Classroom_Management_System_CMS/app/src/main/res/layout/activity_add_teacher.xml" value="0.1734375" />
@@ -37,7 +46,8 @@
         <entry key="..\:/Users/88017/AndroidStudioProjects/Classroom_Management_System_CMS/app/src/main/res/layout/activity_splash_screen.xml" value="0.1734375" />
         <entry key="..\:/Users/88017/AndroidStudioProjects/Classroom_Management_System_CMS/app/src/main/res/layout/activity_student_dashboard.xml" value="0.1734375" />
         <entry key="..\:/Users/88017/AndroidStudioProjects/Classroom_Management_System_CMS/app/src/main/res/layout/activity_teacher_dahboard.xml" value="0.1734375" />
-        <entry key="..\:/Users/88017/AndroidStudioProjects/Classroom_Management_System_CMS/app/src/main/res/layout/activity_teacher_dashboard.xml" value="0.1734375" />
+        <entry key="..\:/Users/88017/AndroidStudioProjects/Classroom_Management_System_CMS/app/src/main/res/layout/activity_teacher_dashboard.xml" value="0.33" />
+        <entry key="..\:/Users/88017/AndroidStudioProjects/Classroom_Management_System_CMS/app/src/main/res/layout/courses_horizontal_list.xml" value="0.25" />
       </map>
     </option>
   </component>

@@ -20,17 +20,9 @@ public class BookClass extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book_class);
 
-        Topic=findViewById(R.id.topic);
 
-        calendar = Calendar.getInstance();
 
-        dateFormat = new SimpleDateFormat("dd/mm/yyyy");
-        
-        Calendar calendar = Calendar.getInstance();
 
-        String date = dateFormat.format(calendar.getTime());
-
-        Topic.getEditText().setText(date);
 
 
     }

@@ -10,18 +10,22 @@
         android:id="@+id/chip1"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_margin="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        app:cardBackgroundColor="@color/primary"
         tools:ignore="UselessParent">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:gravity="center"
+            android:layout_gravity="center"
             android:fontFamily="sans-serif-black"
+            android:gravity="center"
             android:text="Book a class"
             android:textAlignment="center"
-            android:layout_gravity="center"
-            android:textColor="@color/primary"
+            android:textColor="@color/white"
             android:textSize="22sp"
             android:textStyle="bold"
             tools:ignore="RtlCompat" />
@@ -29,11 +33,11 @@
         <ImageButton
             android:layout_width="45dp"
             android:layout_height="match_parent"
-            android:background="@null"
             android:layout_marginStart="10dp"
-            android:src="@drawable/ic_baseline_arrow_back_ios_24"
-            app:tint="@color/primary"
+            android:background="@null"
             android:contentDescription="@string/todo"
+            android:src="@drawable/ic_baseline_arrow_back_ios_24"
+            app:tint="@color/white"
             tools:ignore="ContentDescription" />
 
 
@@ -59,165 +63,109 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/date"
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                        android:layout_width="180dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginRight="20dp"
-                        android:hint="Date"
-                        android:textColorHint="@color/primary"
-                        app:boxStrokeColor="@color/primary"
-                        app:endIconMode="clear_text"
-                        app:startIconDrawable="@drawable/ic_outline_calendar_today_24"
-                        app:startIconTint="@color/primary">
-
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:inputType="date" />
-                    </com.google.android.material.textfield.TextInputLayout>
-
-                    <Spinner
-                        android:id="@+id/room"
-                        android:layout_width="145dp"
-                        android:layout_height="55dp"
-                        android:layout_toRightOf="@id/date"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginTop="17dp"
-                        android:layout_marginRight="20dp"
-                        android:background="@drawable/bottom_button"
-                        android:dropDownSelector="@color/primary"
-                        android:ems="5"
-                        android:entries="@array/c"
-                        android:fontFamily="serif" />
-
-
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/s_time"
-                        android:layout_below="@+id/date"
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                        android:layout_width="160dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginRight="20dp"
-                        android:hint="Start at"
-                        android:textColorHint="@color/primary"
-                        app:boxStrokeColor="@color/primary"
-                        app:endIconMode="clear_text"
-                        app:startIconDrawable="@drawable/ic_baseline_access_time_24"
-                        app:startIconTint="@color/primary">
-
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:inputType="text" />
-                    </com.google.android.material.textfield.TextInputLayout>
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/e_time"
-                        android:layout_below="@+id/date"
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    <LinearLayout
+                        android:id="@+id/part_1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginRight="20dp"
-                        android:layout_toRightOf="@id/s_time"
-                        android:hint="End at"
-                        android:textColorHint="@color/primary"
-                        app:boxStrokeColor="@color/primary"
-                        app:endIconMode="clear_text"
-                        app:startIconDrawable="@drawable/ic_baseline_access_time_24"
-                        app:startIconTint="@color/primary">
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:orientation="horizontal"
+                        android:weightSum="4">
 
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:layout_width="match_parent"
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/date"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="160dp"
                             android:layout_height="wrap_content"
-                            android:inputType="text" />
-                    </com.google.android.material.textfield.TextInputLayout>
+                            android:layout_marginRight="20dp"
+                            android:layout_weight="1"
+                            android:hint="30/12/2050"
+                            android:textColorHint="@color/primary"
+                            app:boxStrokeColor="@color/primary"
+                            app:endIconMode="clear_text"
+                            app:startIconDrawable="@drawable/ic_outline_calendar_today_24"
+                            app:startIconTint="@color/primary">
 
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/title"
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="date" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <Spinner
+                            android:id="@+id/room"
+                            android:layout_width="130dp"
+                            android:layout_height="55dp"
+                            android:layout_marginLeft="40dp"
+                            android:layout_weight="3"
+                            android:background="@drawable/bottom_button"
+                            android:dropDownSelector="@color/primary"
+                            android:ems="5"
+                            android:entries="@array/course_code"
+                            android:fontFamily="serif" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/part_2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/s_time"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginRight="20dp"
-                        android:hint="Title"
-                        android:textColorHint="@color/primary"
-                        app:boxStrokeColor="@color/primary"
-                        app:endIconMode="clear_text"
-                        app:startIconDrawable="@drawable/ic_outline_text_fields_24"
-                        app:startIconTint="@color/primary">
-
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:inputType="text" />
-                    </com.google.android.material.textfield.TextInputLayout>
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/topic"
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/title"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginRight="20dp"
-                        android:hint="Topic"
-                        android:textColorHint="@color/primary"
-                        app:boxStrokeColor="@color/primary"
-                        app:endIconMode="clear_text"
-                        app:startIconDrawable="@drawable/ic_outline_text_fields_24"
-                        app:startIconTint="@color/primary">
-
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:inputType="text" />
-                    </com.google.android.material.textfield.TextInputLayout>
-
-                    <Spinner
-                        android:id="@+id/course_code"
-                        android:layout_width="125dp"
-                        android:layout_height="55dp"
-                        android:layout_below="@id/topic"
-                        android:layout_marginLeft="20dp"
+                        android:layout_below="@id/part_1"
+                        android:layout_marginLeft="10dp"
                         android:layout_marginTop="20dp"
                         android:layout_marginRight="10dp"
-                        android:background="@drawable/bottom_button"
-                        android:dropDownSelector="@color/primary"
-                        android:ems="5"
-                        android:entries="@array/c"
-                        android:fontFamily="serif" />
+                        android:orientation="horizontal"
+                        android:weightSum="2">
 
-                    <EditText
-                        android:id="@+id/course_name"
-                        android:layout_width="match_parent"
-                        android:layout_height="55dp"
-                        android:layout_below="@id/topic"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginRight="20dp"
-                        android:layout_toRightOf="@id/course_code"
-                        android:background="@drawable/bottom_button"
-                        android:gravity="center"
-                        android:hint="Course Name"
-                        android:textAlignment="center"
-                        android:textColorHint="@color/primary" />
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/s_time"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="30dp"
+                            android:layout_weight="1"
+                            android:hint="Start at"
+                            android:textColorHint="@color/primary"
+                            app:boxStrokeColor="@color/primary"
+                            app:endIconMode="clear_text"
+                            app:startIconDrawable="@drawable/ic_baseline_access_time_24"
+                            app:startIconTint="@color/primary">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="text" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/e_time"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/date"
+                            android:layout_marginLeft="30dp"
+                            android:layout_weight="1"
+                            android:hint="End at"
+                            android:textColorHint="@color/primary"
+                            app:boxStrokeColor="@color/primary"
+                            app:endIconMode="clear_text"
+                            app:startIconDrawable="@drawable/ic_baseline_access_time_24"
+                            app:startIconTint="@color/primary">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="text" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </LinearLayout>
+
 
                     <CheckBox
                         android:id="@+id/need_projector"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/course_code"
+                        android:layout_below="@id/part_2"
                         android:layout_marginLeft="20dp"
                         android:layout_marginTop="20dp"
                         android:buttonTint="@color/primary" />
@@ -226,28 +174,13 @@
                         style="@style/TextAppearance.AppCompat.Medium"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/course_code"
+                        android:layout_below="@id/part_2"
                         android:layout_marginLeft="10dp"
-                        android:layout_marginTop="22dp"
+                        android:layout_marginTop="25dp"
                         android:layout_marginRight="20dp"
                         android:layout_toRightOf="@id/need_projector"
                         android:text="Need a projector ?"
                         android:textColor="@color/primary" />
-
-
-                    <Spinner
-                        android:id="@+id/projector"
-                        android:layout_width="match_parent"
-                        android:layout_height="55dp"
-                        android:layout_below="@id/need_projector"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginRight="20dp"
-                        android:background="@drawable/bottom_button"
-                        android:dropDownSelector="@color/primary"
-                        android:ems="5"
-                        android:entries="@array/c"
-                        android:fontFamily="serif" />
 
 
                 </RelativeLayout>

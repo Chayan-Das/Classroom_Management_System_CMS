@@ -27,11 +27,11 @@
         <item>Professor</item>
     </array>
 
-    <array name="c">
-        <item>Course Code</item>
-        <item>Assistant Professor</item>
-        <item>Associate Professor</item>
-        <item>Professor</item>
+    <array name="course_code">
+        <item>CSE-3101</item>
+        <item>CSE-3102</item>
+        <item>CSE-3103</item>
+        <item>CSE-3104</item>
     </array>
 
 

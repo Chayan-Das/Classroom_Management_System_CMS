@@ -15,13 +15,14 @@
         <RelativeLayout
             android:id="@+id/app_bar"
             style="@style/Widget.MaterialComponents.CardView"
+            android:background="@color/primary"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/pro_image"
-                android:layout_width="63dp"
-                android:layout_height="63dp"
+                android:layout_width="53dp"
+                android:layout_height="53dp"
                 android:padding="6dp"
                 android:src="@drawable/ic_outline_person_24"
                 android:tint="@color/white" />
@@ -36,7 +37,7 @@
                 android:background="@null"
                 android:contentDescription="@string/todo"
                 android:src="@drawable/ic_baseline_notifications_24"
-                app:tint="@color/primary" />
+                app:tint="@color/white" />
 
             <ImageButton
                 android:id="@+id/manual"
@@ -48,7 +49,7 @@
                 android:background="@null"
                 android:contentDescription="@string/todo"
                 android:src="@drawable/ic_baseline_menu_book_24"
-                app:tint="@color/primary" />
+                app:tint="@color/white" />
 
             <ImageButton
                 android:id="@+id/logout"
@@ -60,7 +61,9 @@
                 android:background="@null"
                 android:contentDescription="@string/todo"
                 android:src="@drawable/ic_outline_power_settings_new_24"
-                app:tint="@color/primary" />
+                app:tint="@color/white" />
+
+
 
 
         </RelativeLayout>
@@ -69,7 +72,7 @@
             android:id="@+id/dashboard"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginBottom="50dp"
+            android:layout_marginBottom="45dp"
             >
 
             <LinearLayout
@@ -80,47 +83,33 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
                     tools:ignore="UselessParent">
 
                     <RelativeLayout
-                        android:id="@+id/l1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginEnd="10dp">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="sans-serif-black"
-                            android:text="Courses"
-                            android:textColor="@color/primary"
-                            android:textStyle="bold" />
+                        android:background="@color/white"
+                        >
 
 
-                        <TextView
-                            android:id="@+id/Show_Close"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentEnd="true"
-                            android:fontFamily="sans-serif"
-                            android:text="@string/close"
-                            android:textColor="#E71111" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="195dp"
+                            >
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/courses_horizontal_view"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                />
+
+
+                        </LinearLayout>
 
                     </RelativeLayout>
 
-                    <com.google.android.material.card.MaterialCardView
-                        android:layout_width="match_parent"
-                        android:layout_height="200dp"
-                        android:layout_below="@id/l1"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginEnd="10dp"
-                        app:cardCornerRadius="10dp">
 
-
-                    </com.google.android.material.card.MaterialCardView>
 
 
                 </RelativeLayout>
@@ -129,7 +118,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginStart="10dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="20dp"
                     android:layout_marginEnd="10dp"
                     tools:ignore="UselessParent">
 
@@ -177,7 +166,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="45dp"
         android:layout_alignParentBottom="true"
         >
         <LinearLayout
