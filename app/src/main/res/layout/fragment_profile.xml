@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    tools:context=".Student.ProfileFragment">
+
+    <RelativeLayout
+        android:id="@+id/R1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/design_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardElevation="1dp">
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_marginLeft="10dp"
+                        android:src="@drawable/logo_1"
+                        app:tint="@color/primary" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="serif"
+                        android:gravity="center"
+                        android:text="Name"
+                        android:textColor="@color/primary"
+                        android:textStyle="bold" />
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@null"
+                        android:src="@drawable/ic_baseline_settings_24"
+                        app:tint="@color/primary" />
+
+                    <Button
+                        android:id="@+id/edit_profile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="33dp"
+                        android:layout_gravity="end"
+                        android:layout_marginTop="135dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/bottom_button"
+                        android:gravity="center"
+                        android:text="Edit Profile"
+                        android:textAllCaps="false"
+                        android:textColor="@color/primary"
+                        android:textSize="11sp" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="104dp"
+                    android:layout_height="104dp"
+                    android:layout_below="@+id/design_card"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="-63dp"
+                    android:layout_marginBottom="4dp"
+                    android:background="@drawable/circle"
+                    android:elevation="2dp"
+                    android:src="@drawable/ic_color_person_24"
+                    android:tint="@color/primary"
+                    app:civ_border_color="@color/white" />
+
+
+            </RelativeLayout>
+
+
+        </ScrollView>
+
+    </RelativeLayout>
+
+</LinearLayout>

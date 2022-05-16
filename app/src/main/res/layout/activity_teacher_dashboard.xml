@@ -6,210 +6,26 @@
     android:layout_height="match_parent"
     tools:context=".Teacher.TeacherDashboard">
 
-    <LinearLayout
+    <FrameLayout
+        android:id="@+id/fragment_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:ignore="UselessParent">
+        android:layout_marginBottom="70dp"
+        android:background="@color/white">
 
-        <RelativeLayout
-            android:id="@+id/app_bar"
-            style="@style/Widget.MaterialComponents.CardView"
-            android:background="@color/primary"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+    </FrameLayout>
 
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/pro_image"
-                android:layout_width="53dp"
-                android:layout_height="53dp"
-                android:padding="6dp"
-                android:src="@drawable/ic_outline_person_24"
-                android:tint="@color/white" />
-
-            <ImageButton
-                android:id="@+id/notifications"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginEnd="17dp"
-                android:layout_toStartOf="@id/manual"
-                android:background="@null"
-                android:contentDescription="@string/todo"
-                android:src="@drawable/ic_baseline_notifications_24"
-                app:tint="@color/white" />
-
-            <ImageButton
-                android:id="@+id/manual"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginEnd="17dp"
-                android:layout_toStartOf="@id/logout"
-                android:background="@null"
-                android:contentDescription="@string/todo"
-                android:src="@drawable/ic_baseline_menu_book_24"
-                app:tint="@color/white" />
-
-            <ImageButton
-                android:id="@+id/logout"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                android:layout_marginEnd="8dp"
-                android:background="@null"
-                android:contentDescription="@string/todo"
-                android:src="@drawable/ic_outline_power_settings_new_24"
-                app:tint="@color/white" />
-
-
-
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/dashboard"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginBottom="45dp"
-            >
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    tools:ignore="UselessParent">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@color/white"
-                        >
-
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="195dp"
-                            >
-
-                            <androidx.recyclerview.widget.RecyclerView
-                                android:id="@+id/courses_horizontal_view"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                />
-
-
-                        </LinearLayout>
-
-                    </RelativeLayout>
-
-
-
-
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginEnd="10dp"
-                    tools:ignore="UselessParent">
-
-                    <RelativeLayout
-                        android:id="@+id/l2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        >
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="sans-serif-black"
-                            android:text="Today's Schedule"
-                            android:textColor="@color/primary"
-                            android:textStyle="bold" />
-
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentEnd="true"
-                            android:fontFamily="sans-serif-black"
-                            android:text="Show"
-                            android:textColor="@color/primary"
-                            android:visibility="gone" />
-
-                    </RelativeLayout>
-
-
-
-
-                </RelativeLayout>
-
-
-            </LinearLayout>
-
-
-        </RelativeLayout>
-
-
-
-
-    </LinearLayout>
-
-    <RelativeLayout
+    <com.etebarian.meowbottomnavigation.MeowBottomNavigation
+        android:id="@+id/bottom_nav"
         android:layout_width="match_parent"
-        android:layout_height="45dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        >
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:weightSum="3"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:id="@+id/dashboard_icon"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:padding="8dp"
-                android:src="@drawable/ic_outline_dashboard_24"
-                app:tint="@color/primary" />
-
-
-            <ImageView
-                android:id="@+id/settings_dashboard"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:padding="8dp"
-                android:src="@drawable/ic_outline_laptop_chromebook_24"
-                app:tint="@color/primary"
-                />
-
-            <ImageView
-                android:id="@+id/alert_dashboard"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:padding="8dp"
-                android:src="@drawable/ic_outline_notifications_active_24"
-                app:tint="@color/primary"
-                />
-
-
-        </LinearLayout>
-
-
-
-    </RelativeLayout>
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="0dp"
+        app:mbn_backgroundBottomColor="#FFFFFF"
+        app:mbn_circleColor="@color/white"
+        app:mbn_defaultIconColor="#000000"
+        app:mbn_selectedIconColor="@color/primary" />
 
 </RelativeLayout>
