@@ -42,7 +42,7 @@
                             android:layout_width="100dp"
                             android:layout_height="100dp"
                             android:layout_marginStart="10dp"
-                            android:src="@drawable/logo_1"
+                            android:src="@drawable/logo"
                             app:tint="@color/primary"
                             tools:ignore="ContentDescription" />
                     </LinearLayout>

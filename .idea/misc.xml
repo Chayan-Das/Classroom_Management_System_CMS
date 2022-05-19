@@ -59,11 +59,13 @@
         <entry key="..\:/Users/dasch/AndroidStudioProjects/Classroom_Management_System_CMS1/app/src/main/res/drawable/rotate_backward.xml" value="0.1395" />
         <entry key="..\:/Users/dasch/AndroidStudioProjects/Classroom_Management_System_CMS1/app/src/main/res/drawable/rotate_forward.xml" value="0.1395" />
         <entry key="..\:/Users/dasch/AndroidStudioProjects/Classroom_Management_System_CMS1/app/src/main/res/drawable/tab_indicator.xml" value="0.157" />
+        <entry key="..\:/Users/dasch/AndroidStudioProjects/Classroom_Management_System_CMS1/app/src/main/res/layout-v28/grid_batch.xml" value="0.13854166666666667" />
         <entry key="..\:/Users/dasch/AndroidStudioProjects/Classroom_Management_System_CMS1/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/Users/dasch/AndroidStudioProjects/Classroom_Management_System_CMS1/app/src/main/res/layout/activity_staff_dashboard.xml" value="0.13854166666666667" />
         <entry key="..\:/Users/dasch/AndroidStudioProjects/Classroom_Management_System_CMS1/app/src/main/res/layout/activity_student_dashboard.xml" value="0.22" />
         <entry key="..\:/Users/dasch/AndroidStudioProjects/Classroom_Management_System_CMS1/app/src/main/res/layout/activity_teacher_dashboard.xml" value="0.13854166666666667" />
         <entry key="..\:/Users/dasch/AndroidStudioProjects/Classroom_Management_System_CMS1/app/src/main/res/layout/activity_test.xml" value="0.1" />
+        <entry key="..\:/Users/dasch/AndroidStudioProjects/Classroom_Management_System_CMS1/app/src/main/res/layout/courses_horizontal_list.xml" value="0.21" />
         <entry key="..\:/Users/dasch/AndroidStudioProjects/Classroom_Management_System_CMS1/app/src/main/res/layout/fragment_class.xml" value="0.13854166666666667" />
         <entry key="..\:/Users/dasch/AndroidStudioProjects/Classroom_Management_System_CMS1/app/src/main/res/layout/fragment_classes.xml" value="0.21" />
         <entry key="..\:/Users/dasch/AndroidStudioProjects/Classroom_Management_System_CMS1/app/src/main/res/layout/fragment_dashboard.xml" value="0.33" />
@@ -71,10 +73,10 @@
         <entry key="..\:/Users/dasch/AndroidStudioProjects/Classroom_Management_System_CMS1/app/src/main/res/layout/fragment_exam.xml" value="0.1" />
         <entry key="..\:/Users/dasch/AndroidStudioProjects/Classroom_Management_System_CMS1/app/src/main/res/layout/fragment_key.xml" value="0.13854166666666667" />
         <entry key="..\:/Users/dasch/AndroidStudioProjects/Classroom_Management_System_CMS1/app/src/main/res/layout/fragment_profile.xml" value="0.33" />
-        <entry key="..\:/Users/dasch/AndroidStudioProjects/Classroom_Management_System_CMS1/app/src/main/res/layout/fragment_staff_create.xml" value="0.25" />
-        <entry key="..\:/Users/dasch/AndroidStudioProjects/Classroom_Management_System_CMS1/app/src/main/res/layout/fragment_staff_dashboard.xml" value="0.33" />
+        <entry key="..\:/Users/dasch/AndroidStudioProjects/Classroom_Management_System_CMS1/app/src/main/res/layout/fragment_staff_create.xml" value="0.13854166666666667" />
+        <entry key="..\:/Users/dasch/AndroidStudioProjects/Classroom_Management_System_CMS1/app/src/main/res/layout/fragment_staff_dashboard.xml" value="0.25" />
         <entry key="..\:/Users/dasch/AndroidStudioProjects/Classroom_Management_System_CMS1/app/src/main/res/layout/fragment_staff_download.xml" value="0.13854166666666667" />
-        <entry key="..\:/Users/dasch/AndroidStudioProjects/Classroom_Management_System_CMS1/app/src/main/res/layout/grid_batch.xml" value="0.33" />
+        <entry key="..\:/Users/dasch/AndroidStudioProjects/Classroom_Management_System_CMS1/app/src/main/res/layout/grid_batch.xml" value="0.67" />
       </map>
     </option>
   </component>

@@ -3,6 +3,7 @@ package com.example.classroommanagementsystemcms.Staff;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -32,16 +33,12 @@ public class StaffDashboardFragment extends Fragment {
     TextInputLayout mbatchname;
     Button mcreate;
     DatabaseReference databaseCreate;
-
     myadapter adapter;
-
     RecyclerView recyclerView;
 
 
-
-
     public StaffDashboardFragment() {
-        // Required empty public constructor
+
     }
 
 
@@ -108,7 +105,10 @@ public class StaffDashboardFragment extends Fragment {
         databaseCreate = FirebaseDatabase.getInstance().getReference("Batch");
 
         recyclerView=view.findViewById(R.id.recyclerView1);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+
+        StaffDashboard c = (StaffDashboard) getActivity();
+        recyclerView.setLayoutManager(new GridLayoutManager(c, 3));
+
 
         FirebaseRecyclerOptions<Batchmodel> options =
                 new FirebaseRecyclerOptions.Builder<Batchmodel>()
@@ -135,7 +135,6 @@ public class StaffDashboardFragment extends Fragment {
     private void addbatch() {
 
         String batchname = mbatchname.getEditText().getText().toString();
-
 
         if (!TextUtils.isEmpty(batchname)){
 

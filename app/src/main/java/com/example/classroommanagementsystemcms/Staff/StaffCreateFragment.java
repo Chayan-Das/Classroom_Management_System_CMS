@@ -76,31 +76,6 @@ public class StaffCreateFragment extends Fragment {
     private void addFragment(View view) {
 
 
-        databaseCreate = FirebaseDatabase.getInstance().getReference("Batch");
-
-        recyclerView=view.findViewById(R.id.recyclerView1);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-
-        FirebaseRecyclerOptions<Batchmodel> options =
-                new FirebaseRecyclerOptions.Builder<Batchmodel>()
-                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Batch"), Batchmodel.class)
-                        .build();
-
-        adapter=new myadapter(options);
-        recyclerView.setAdapter(adapter);
-
-        mbatchname=view.findViewById(R.id.add_batch);
-        mcreate=view.findViewById(R.id.save_batch);
-
-        mcreate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                addbatch();
-
-            }
-        });
-
-
 
 
 
@@ -112,35 +87,6 @@ public class StaffCreateFragment extends Fragment {
 
 
 
-
-    private void addbatch() {
-
-        String batchname = mbatchname.getEditText().getText().toString();
-
-
-        if (!TextUtils.isEmpty(batchname)){
-
-            String id = databaseCreate.push().getKey();
-            Batchmodel batchmodel= new Batchmodel(id,batchname);
-
-            databaseCreate.child(id).setValue(batchmodel);
-
-        }
-
-
-    }
-
-    @Override
-    public void onStart() {
-        super.onStart();
-        adapter.startListening();
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-        adapter.stopListening();
-    }
 
 
 }
