@@ -106,8 +106,10 @@ public class StaffDashboardFragment extends Fragment {
 
         recyclerView=view.findViewById(R.id.recyclerView1);
 
-        StaffDashboard c = (StaffDashboard) getActivity();
-        recyclerView.setLayoutManager(new GridLayoutManager(c, 3));
+        //StaffDashboard c = (StaffDashboard) getActivity();
+        //recyclerView.setLayoutManager(new GridLayoutManager(c, 3));
+
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
 
         FirebaseRecyclerOptions<Batchmodel> options =

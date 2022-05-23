@@ -138,12 +138,13 @@ public class Signup extends AppCompatActivity {
         String password = Password.getEditText().getText().toString();
         String role = "student";
         String batch = "2k"+roll.substring(0,2);
+        String type = "Regular";
 
 
         if (!TextUtils.isEmpty(fullname)){
 
             String id = reference.push().getKey();
-            StudentHelperClass superAdminHelperClass= new StudentHelperClass(fullname,email,password,roll,role,batch);
+            StudentHelperClass superAdminHelperClass= new StudentHelperClass(fullname,email,password,roll,role,batch,type);
 
             reference.child(roll).setValue(superAdminHelperClass);
 

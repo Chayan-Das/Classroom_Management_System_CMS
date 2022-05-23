@@ -10,23 +10,22 @@
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="70dp"
+        android:layout_marginBottom="50dp"
         android:background="@color/white">
-
     </FrameLayout>
 
     <com.etebarian.meowbottomnavigation.MeowBottomNavigation
         android:id="@+id/bottom_nav"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="70dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="0dp"
         android:layout_marginBottom="0dp"
         app:mbn_backgroundBottomColor="@color/white"
-        app:mbn_circleColor="#FFEB3B"
+        app:mbn_circleColor="@color/primary"
         app:mbn_defaultIconColor="@color/black"
-        app:mbn_selectedIconColor="@color/primary" />
+        app:mbn_selectedIconColor="@color/white" />
 
 
 </RelativeLayout>

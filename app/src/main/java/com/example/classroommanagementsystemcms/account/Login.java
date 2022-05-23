@@ -140,7 +140,7 @@ public class Login extends AppCompatActivity {
         final String userEnteredUsername = mEmail.getEditText().getText().toString();
 
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Student Accounts");
-        Query query = reference.orderByChild("Email").equalTo(userEnteredUsername);
+        Query query = reference.orderByChild("email").equalTo(userEnteredUsername);
 
         query.addValueEventListener(new ValueEventListener() {
             @Override

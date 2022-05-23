@@ -8,18 +8,20 @@ public class StudentHelperClass {
     String roll;
     String role;
     String batch;
+    String type;
 
     public StudentHelperClass(){
 
     }
 
-    public StudentHelperClass(String fullname, String email, String password, String roll, String role, String batch) {
+    public StudentHelperClass(String fullname, String email, String password, String roll, String role, String batch, String type) {
         this.fullname = fullname;
         this.email = email;
         this.password = password;
         this.roll = roll;
         this.role = role;
         this.batch = batch;
+        this.type = type;
     }
 
     public String getFullname() {
@@ -68,5 +70,13 @@ public class StudentHelperClass {
 
     public void setBatch(String batch) {
         this.batch = batch;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 }
