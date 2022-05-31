@@ -1,4 +1,4 @@
-package com.example.classroommanagementsystemcms.Staff;
+package com.example.classroommanagementsystemcms.Staff.Fragments;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -8,10 +8,6 @@ import android.os.Bundle;
 
 import com.etebarian.meowbottomnavigation.MeowBottomNavigation;
 import com.example.classroommanagementsystemcms.R;
-import com.example.classroommanagementsystemcms.Student.DashboardFragment;
-import com.example.classroommanagementsystemcms.Student.DownloadFragment;
-import com.example.classroommanagementsystemcms.Student.KeyFragment;
-import com.example.classroommanagementsystemcms.Student.ProfileFragment;
 
 public class StaffDashboard extends AppCompatActivity {
 
@@ -23,7 +19,7 @@ public class StaffDashboard extends AppCompatActivity {
         setContentView(R.layout.activity_staff_dashboard);
 
         meo=(MeowBottomNavigation)findViewById(R.id.bottom_nav);
-        meo.add(new MeowBottomNavigation.Model(1,R.drawable.ic_baseline_dashboard_24));
+        meo.add(new MeowBottomNavigation.Model(1,R.drawable.ic_baseline_vpn_key_24));
         meo.add(new MeowBottomNavigation.Model(2,R.drawable.ic_baseline_vpn_key_24));
         meo.add(new MeowBottomNavigation.Model(3,R.drawable.ic_baseline_edit_24));
         meo.add(new MeowBottomNavigation.Model(4,R.drawable.ic_baseline_cloud_download_24));
@@ -42,7 +38,7 @@ public class StaffDashboard extends AppCompatActivity {
 
         meo.show(1,true);
 
-        replace(new StaffDashboardFragment());
+        replace(new StaffKeyFragment());
 
 
 
@@ -53,7 +49,7 @@ public class StaffDashboard extends AppCompatActivity {
 
                 switch (item.getId()){
                     case 1:
-                        replace(new StaffDashboardFragment());
+                        replace(new StaffKeyFragment());
                         break;
                     case 2:
                         replace(new StaffKeyFragment());

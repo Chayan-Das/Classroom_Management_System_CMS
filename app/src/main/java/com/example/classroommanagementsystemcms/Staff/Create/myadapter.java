@@ -1,23 +1,17 @@
-package com.example.classroommanagementsystemcms.Staff;
+package com.example.classroommanagementsystemcms.Staff.Create;
 
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.classroommanagementsystemcms.R;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
-
-import java.util.ArrayList;
 
 public class myadapter extends FirebaseRecyclerAdapter<Batchmodel, myadapter.myviewholder> {
 

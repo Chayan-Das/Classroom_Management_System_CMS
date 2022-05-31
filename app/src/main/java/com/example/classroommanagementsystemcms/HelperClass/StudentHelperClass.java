@@ -9,12 +9,13 @@ public class StudentHelperClass {
     String role;
     String batch;
     String type;
+    String profileimage;
 
     public StudentHelperClass(){
 
     }
 
-    public StudentHelperClass(String fullname, String email, String password, String roll, String role, String batch, String type) {
+    public StudentHelperClass(String fullname, String email, String password, String roll, String role, String batch, String type, String profileimage) {
         this.fullname = fullname;
         this.email = email;
         this.password = password;
@@ -22,6 +23,7 @@ public class StudentHelperClass {
         this.role = role;
         this.batch = batch;
         this.type = type;
+        this.profileimage = profileimage;
     }
 
     public String getFullname() {
@@ -78,5 +80,13 @@ public class StudentHelperClass {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public String getProfileimage() {
+        return profileimage;
+    }
+
+    public void setProfileimage(String profileimage) {
+        this.profileimage = profileimage;
     }
 }

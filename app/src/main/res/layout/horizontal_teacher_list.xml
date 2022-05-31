@@ -40,9 +40,9 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginStart="100dp"
-                    android:background="@color/white"
-                    android:layout_toRightOf="@+id/profile_pic_card">
+                    android:layout_marginStart="50dp"
+                    android:layout_toRightOf="@+id/profile_pic_card"
+                    android:background="@color/white">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -54,9 +54,9 @@
                             android:id="@+id/department"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Department"
-                            android:fontFamily="serif"
                             android:fitsSystemWindows="true"
+                            android:fontFamily="serif"
+                            android:text="Department"
                             android:textAlignment="center"
                             android:textColor="@color/black"
                             android:textStyle="bold" />

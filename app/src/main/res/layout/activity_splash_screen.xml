@@ -14,16 +14,16 @@
         android:layout_centerInParent="true"
         android:contentDescription="@string/todo"
         android:src="@drawable/logo"
-        app:tint="@color/primary" />
+        />
 
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/loading_splash"
-        android:layout_width="280dp"
-        android:layout_height="280dp"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="-20dp"
+        android:layout_marginBottom="120dp"
         android:tint="@color/black"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"

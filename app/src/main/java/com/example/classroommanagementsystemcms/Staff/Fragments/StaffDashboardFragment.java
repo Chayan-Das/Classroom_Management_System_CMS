@@ -1,9 +1,8 @@
-package com.example.classroommanagementsystemcms.Staff;
+package com.example.classroommanagementsystemcms.Staff.Fragments;
 
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -16,6 +15,8 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 
 import com.example.classroommanagementsystemcms.R;
+import com.example.classroommanagementsystemcms.Staff.Create.Batchmodel;
+import com.example.classroommanagementsystemcms.Staff.Create.myadapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -56,7 +57,6 @@ public class StaffDashboardFragment extends Fragment {
 
         main(view);
         addFragment(view);
-
 
         return view;
     }

@@ -79,17 +79,32 @@
         <entry key="..\:/Users/dasch/AndroidStudioProjects/Classroom_Management_System_CMS1/app/src/main/res/layout/grid_batch.xml" value="0.67" />
         <entry key="..\:/Users/dasch/Desktop/2022/3110/Classroom_Management_System_CMS1/app/src/main/res/drawable/bottom_button.xml" value="0.157" />
         <entry key="..\:/Users/dasch/Desktop/2022/3110/Classroom_Management_System_CMS1/app/src/main/res/drawable/button_1.xml" value="0.157" />
+        <entry key="..\:/Users/dasch/Desktop/2022/3110/Classroom_Management_System_CMS1/app/src/main/res/drawable/circle.xml" value="0.157" />
+        <entry key="..\:/Users/dasch/Desktop/2022/3110/Classroom_Management_System_CMS1/app/src/main/res/drawable/circle1.xml" value="0.157" />
         <entry key="..\:/Users/dasch/Desktop/2022/3110/Classroom_Management_System_CMS1/app/src/main/res/drawable/dash.xml" value="0.157" />
         <entry key="..\:/Users/dasch/Desktop/2022/3110/Classroom_Management_System_CMS1/app/src/main/res/drawable/ic_outline_person_24.xml" value="0.157" />
+        <entry key="..\:/Users/dasch/Desktop/2022/3110/Classroom_Management_System_CMS1/app/src/main/res/drawable/side.xml" value="0.1535" />
+        <entry key="..\:/Users/dasch/Desktop/2022/3110/Classroom_Management_System_CMS1/app/src/main/res/drawable/spinner_background.xml" value="0.1355" />
         <entry key="..\:/Users/dasch/Desktop/2022/3110/Classroom_Management_System_CMS1/app/src/main/res/layout/activity_add_teacher.xml" value="0.13854166666666667" />
+        <entry key="..\:/Users/dasch/Desktop/2022/3110/Classroom_Management_System_CMS1/app/src/main/res/layout/activity_addkey.xml" value="0.18" />
+        <entry key="..\:/Users/dasch/Desktop/2022/3110/Classroom_Management_System_CMS1/app/src/main/res/layout/activity_login.xml" value="0.13854166666666667" />
         <entry key="..\:/Users/dasch/Desktop/2022/3110/Classroom_Management_System_CMS1/app/src/main/res/layout/activity_signup.xml" value="0.21" />
-        <entry key="..\:/Users/dasch/Desktop/2022/3110/Classroom_Management_System_CMS1/app/src/main/res/layout/activity_staff_dashboard.xml" value="0.21" />
+        <entry key="..\:/Users/dasch/Desktop/2022/3110/Classroom_Management_System_CMS1/app/src/main/res/layout/activity_splash_screen.xml" value="0.16" />
+        <entry key="..\:/Users/dasch/Desktop/2022/3110/Classroom_Management_System_CMS1/app/src/main/res/layout/activity_staff_dashboard.xml" value="0.2" />
+        <entry key="..\:/Users/dasch/Desktop/2022/3110/Classroom_Management_System_CMS1/app/src/main/res/layout/activity_test.xml" value="0.13854166666666667" />
         <entry key="..\:/Users/dasch/Desktop/2022/3110/Classroom_Management_System_CMS1/app/src/main/res/layout/courses_horizontal_list.xml" value="0.33" />
-        <entry key="..\:/Users/dasch/Desktop/2022/3110/Classroom_Management_System_CMS1/app/src/main/res/layout/fragment_profile.xml" value="0.13854166666666667" />
-        <entry key="..\:/Users/dasch/Desktop/2022/3110/Classroom_Management_System_CMS1/app/src/main/res/layout/fragment_staff_create.xml" value="0.25" />
+        <entry key="..\:/Users/dasch/Desktop/2022/3110/Classroom_Management_System_CMS1/app/src/main/res/layout/fragment_dashboard.xml" value="0.13854166666666667" />
+        <entry key="..\:/Users/dasch/Desktop/2022/3110/Classroom_Management_System_CMS1/app/src/main/res/layout/fragment_exam.xml" value="0.13854166666666667" />
+        <entry key="..\:/Users/dasch/Desktop/2022/3110/Classroom_Management_System_CMS1/app/src/main/res/layout/fragment_home_key.xml" value="0.33" />
+        <entry key="..\:/Users/dasch/Desktop/2022/3110/Classroom_Management_System_CMS1/app/src/main/res/layout/fragment_profile.xml" value="0.5" />
+        <entry key="..\:/Users/dasch/Desktop/2022/3110/Classroom_Management_System_CMS1/app/src/main/res/layout/fragment_staff_create.xml" value="0.13854166666666667" />
         <entry key="..\:/Users/dasch/Desktop/2022/3110/Classroom_Management_System_CMS1/app/src/main/res/layout/fragment_staff_dashboard.xml" value="0.25" />
+        <entry key="..\:/Users/dasch/Desktop/2022/3110/Classroom_Management_System_CMS1/app/src/main/res/layout/fragment_staff_key.xml" value="0.25" />
         <entry key="..\:/Users/dasch/Desktop/2022/3110/Classroom_Management_System_CMS1/app/src/main/res/layout/grid_batch.xml" value="0.33" />
-        <entry key="..\:/Users/dasch/Desktop/2022/3110/Classroom_Management_System_CMS1/app/src/main/res/layout/horizontal_teacher_list.xml" value="0.33" />
+        <entry key="..\:/Users/dasch/Desktop/2022/3110/Classroom_Management_System_CMS1/app/src/main/res/layout/horizontal_roomlist.xml" value="0.13854166666666667" />
+        <entry key="..\:/Users/dasch/Desktop/2022/3110/Classroom_Management_System_CMS1/app/src/main/res/layout/horizontal_teacher_list.xml" value="0.1" />
+        <entry key="..\:/Users/dasch/Desktop/2022/3110/Classroom_Management_System_CMS1/app/src/main/res/layout/roomlist.xml" value="0.13854166666666667" />
+        <entry key="..\:/Users/dasch/Desktop/2022/3110/Classroom_Management_System_CMS1/app/src/main/res/layout/spinner_background.xml" value="0.13854166666666667" />
       </map>
     </option>
   </component>

@@ -4,14 +4,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Staff.StaffDashboard">
+    tools:context=".Staff.Fragments.StaffDashboard">
 
     <FrameLayout
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/white"
         android:layout_marginBottom="50dp"
-        android:background="@color/white">
+        >
+
     </FrameLayout>
 
     <com.etebarian.meowbottomnavigation.MeowBottomNavigation
@@ -22,9 +24,9 @@
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="0dp"
         android:layout_marginBottom="0dp"
-        app:mbn_backgroundBottomColor="@color/white"
+        app:mbn_backgroundBottomColor="@color/primary"
         app:mbn_circleColor="@color/primary"
-        app:mbn_defaultIconColor="@color/black"
+        app:mbn_defaultIconColor="@color/white"
         app:mbn_selectedIconColor="@color/white" />
 
 

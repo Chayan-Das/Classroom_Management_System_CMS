@@ -1,4 +1,4 @@
-package com.example.classroommanagementsystemcms.Staff;
+package com.example.classroommanagementsystemcms.Staff.Fragments;
 
 import android.os.Bundle;
 
@@ -13,6 +13,9 @@ import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.classroommanagementsystemcms.Adapter.Teacherlist;
+import com.example.classroommanagementsystemcms.HelperClass.AddTeacherHelperClass;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 
 import android.widget.ArrayAdapter;
@@ -43,7 +46,7 @@ public class StaffCreateFragment extends Fragment {
     Button mcreate;
     DatabaseReference databaseCreate;
 
-    myadapter adapter;
+    Teacherlist adapter;
 
     RecyclerView recyclerView;
 
@@ -69,8 +72,23 @@ public class StaffCreateFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_staff_create, container, false);
 
         addFragment(view);
+        main(view);
 
         return view;
+    }
+
+    private void main(View view) {
+        recyclerView=view.findViewById(R.id.teacher_list);
+
+        FirebaseRecyclerOptions<AddTeacherHelperClass> options =
+                new FirebaseRecyclerOptions.Builder<AddTeacherHelperClass>()
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Batch"), AddTeacherHelperClass.class)
+                        .build();
+
+        adapter=new Teacherlist(options);
+        recyclerView.setAdapter(adapter);
+
+
     }
 
     private void addFragment(View view) {
@@ -80,6 +98,17 @@ public class StaffCreateFragment extends Fragment {
 
 
 
+    }
+    @Override
+    public void onStart() {
+        super.onStart();
+        adapter.startListening();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        adapter.stopListening();
     }
 
 

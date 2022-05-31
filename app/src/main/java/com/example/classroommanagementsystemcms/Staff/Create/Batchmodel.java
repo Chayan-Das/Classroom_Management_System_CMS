@@ -1,4 +1,4 @@
-package com.example.classroommanagementsystemcms.Staff;
+package com.example.classroommanagementsystemcms.Staff.Create;
 
 public class Batchmodel {
     String Batchid;

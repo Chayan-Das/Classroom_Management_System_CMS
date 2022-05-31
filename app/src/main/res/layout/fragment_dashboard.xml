@@ -57,10 +57,13 @@
         android:layout_marginBottom="8dp"
         android:background="@null"
         app:tabGravity="center"
-        app:tabIndicator="@drawable/bottom_button"
         app:tabIndicatorAnimationMode="elastic"
         app:tabIndicatorGravity="stretch"
+        app:tabIndicator="@drawable/bottom_button"
+        app:tabIndicatorColor="@color/primary"
         app:tabMode="fixed"
+        app:tabInlineLabel="true"
+        app:tabRippleColor="@color/primary"
         app:tabSelectedTextColor="@color/primary"
         app:tabTextColor="@color/primary" />
 

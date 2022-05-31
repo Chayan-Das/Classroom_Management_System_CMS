@@ -34,8 +34,7 @@
     </array>
 
 
-    <array name="rooms"
-        >
+    <array name="rooms">
         <item>Classroom</item>
         <item>Laboratory</item>
     </array>
