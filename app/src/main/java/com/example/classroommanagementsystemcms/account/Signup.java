@@ -25,6 +25,7 @@ import android.widget.Toast;
 import com.example.classroommanagementsystemcms.HelperClass.StudentHelperClass;
 import com.example.classroommanagementsystemcms.R;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.button.MaterialButton;
@@ -38,6 +39,8 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
+import java.util.HashMap;
+
 public class Signup extends AppCompatActivity {
 
     TextInputLayout Name,Id,Email,Password;
@@ -48,14 +51,14 @@ public class Signup extends AppCompatActivity {
     private FirebaseAuth fAuth;
     FirebaseUser user;
 
-    private static final int CAMERA_REQUEST_CODE = 100;
+
     private static final int STORAGE_REQUEST_CODE = 200;
     private static final int IMAGE_PICK_GALLER_CODE = 300;
-    private static final int IMAGE_PICK_CAMERA_CODE = 400;
 
-    private String[] camerapermissions;
+
     private String[] storagepermissions;
     private Uri image_uri;
+    private String proimage = "";
 
 
     @Override
@@ -78,13 +81,17 @@ public class Signup extends AppCompatActivity {
 
         //permissions
 
-        camerapermissions = new String[]{Manifest.permission.CAMERA,Manifest.permission.WRITE_EXTERNAL_STORAGE};
         storagepermissions = new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE};
 
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showimagepick();
+                if(checkstoragepermissions()){
+                    pickFromgallery();
+                }
+                else{
+                    requeststoragepermission();
+                }
             }
         });
 
@@ -132,44 +139,7 @@ public class Signup extends AppCompatActivity {
 
     ////////////////////////////////////////////
 
-    private void showimagepick() {
 
-        String[] options = {"Camera", "Gallery"};
-
-        AlertDialog.Builder builder= new AlertDialog.Builder(this);
-        builder.setTitle("Pick Image")
-                .setItems(options, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-
-                        if(which==0){
-                            //camera
-                            if(checkstoragepermissions()){
-                                pickFromcamera();
-                            }
-                            else{
-                                requecamerapermission();
-                            }
-
-
-                        }
-                        else {
-                            //gallery
-                            if(checkstoragepermissions()){
-                                pickFromgallery();
-                            }
-                            else{
-                                requeststoragepermission();
-                            }
-
-                        }
-
-
-                    }
-                })
-                .show();
-
-    }
 
     private  void pickFromgallery(){
         Intent intent= new Intent(Intent.ACTION_PICK);
@@ -178,38 +148,23 @@ public class Signup extends AppCompatActivity {
 
     }
 
-    private  void pickFromcamera(){
-        ContentValues contentValues= new ContentValues();
-        contentValues.put(MediaStore.Images.Media.TITLE, "Temp_image_title");
-        contentValues.put(MediaStore.Images.Media.DESCRIPTION, "Temp_image_description");
 
-        image_uri = getContentResolver().insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, contentValues);
-
-        Intent intent= new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        intent.putExtra(MediaStore.EXTRA_OUTPUT, image_uri);
-        startActivityForResult(intent, IMAGE_PICK_CAMERA_CODE);
-
-    }
 
     private void requeststoragepermission(){
         ActivityCompat.requestPermissions(this,storagepermissions,STORAGE_REQUEST_CODE);
     }
 
     private boolean checkstoragepermissions(){
-        boolean result= ContextCompat.checkSelfPermission(this,
-                Manifest.permission.CAMERA
-                )==(PackageManager.PERMISSION_GRANTED);
+
 
         boolean result1= ContextCompat.checkSelfPermission(this,
                 Manifest.permission.WRITE_EXTERNAL_STORAGE
         )==(PackageManager.PERMISSION_GRANTED);
 
-        return result && result1;
+        return result1;
     }
 
-    private void requecamerapermission(){
-        ActivityCompat.requestPermissions(this,camerapermissions,CAMERA_REQUEST_CODE);
-    }
+
 
     //////////////////////////////////////////////////////
 
@@ -285,18 +240,21 @@ public class Signup extends AppCompatActivity {
 
         else {
 
-            String profileimage = "profile_images/"+fAuth.getUid();
+            String profilneimage = "profile_images/"+fAuth.getUid();
 
-            StorageReference storageReference= FirebaseStorage.getInstance().getReference(profileimage);
+            StorageReference storageReference= FirebaseStorage.getInstance().getReference(profilneimage);
             storageReference.putFile(image_uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
 
                     Task<Uri> uriTask = taskSnapshot.getStorage().getDownloadUrl();
-                    while (uriTask.isSuccessful());
+                    while (!uriTask.isSuccessful());
 
-                    Uri downloadimageuri= uriTask.getResult();
+                    Uri downloadable= uriTask.getResult();
+                    proimage = downloadable.toString();
+
                     if(uriTask.isSuccessful()){
+
                         String fullname = Name.getEditText().getText().toString();
                         String roll = Id.getEditText().getText().toString();
                         String email = Email.getEditText().getText().toString();
@@ -304,7 +262,7 @@ public class Signup extends AppCompatActivity {
                         String role = "student";
                         String batch = "2k"+roll.substring(0,2);
                         String type = "Regular";
-                        String profileimage=""+downloadimageuri;
+                        String profileimage= proimage;
 
 
                         if (!TextUtils.isEmpty(fullname)){
@@ -332,27 +290,14 @@ public class Signup extends AppCompatActivity {
 
         switch (requestCode){
 
-            case CAMERA_REQUEST_CODE:{
-                if(grantResults.length>0){
-                    boolean cameraAccepted= grantResults[0] == PackageManager.PERMISSION_GRANTED;
-                    boolean storageAccepted= grantResults[1] == PackageManager.PERMISSION_GRANTED;
 
-                    if(cameraAccepted && storageAccepted){
-                        pickFromcamera();
-                    }
-                    else {
-                        Toast.makeText(this,"Camera permissions necessary",Toast.LENGTH_LONG).show();
-                    }
-                }
-            }
-            break;
 
             case STORAGE_REQUEST_CODE:{
                 if(grantResults.length>0){
                     boolean storageAccepted= grantResults[0] == PackageManager.PERMISSION_GRANTED;
 
                     if(storageAccepted ){
-                        pickFromcamera();
+                        pickFromgallery();
                     }
                     else {
                         Toast.makeText(this,"Storage permissions necessary",Toast.LENGTH_LONG).show();
@@ -372,13 +317,6 @@ public class Signup extends AppCompatActivity {
         if(resultCode==RESULT_OK){
 
             if(requestCode==IMAGE_PICK_GALLER_CODE){
-                assert data != null;
-                image_uri=data.getData();
-                imageView.setImageURI(image_uri);
-            }
-
-            else if(requestCode==IMAGE_PICK_CAMERA_CODE){
-                assert data != null;
                 image_uri=data.getData();
                 imageView.setImageURI(image_uri);
             }
