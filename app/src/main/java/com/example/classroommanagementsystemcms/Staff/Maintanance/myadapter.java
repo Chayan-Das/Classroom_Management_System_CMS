@@ -51,7 +51,10 @@ private Context context;
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(context, Addkey.class);
+                Intent intent = new Intent(context, BatchDetailsStaff.class);
+
+                intent.putExtra("id",batchmodel.getBatch_name());
+
                 v.getContext().startActivity(intent);
 
             }
