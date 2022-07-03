@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Student.CR.CrFragment">
+
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/primary">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="serif"
+            android:text="Schedule a Class"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:ignore="RtlCompat" />
+
+        <ImageView
+            android:layout_width="47dp"
+            android:layout_height="47dp"
+            android:layout_centerVertical="true"
+            android:background="@null"
+            android:padding="5dp"
+            android:src="@drawable/classroom"
+            app:tint="@color/white" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_baseline_schedule_24"
+            android:background="@null"
+            android:layout_alignParentRight="true"
+            android:layout_marginEnd="10dp"
+            android:tint="@color/white"
+            />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_below="@id/header"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/date"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:hint="Date"
+            android:textColorHint="@color/primary"
+            app:boxStrokeColor="@color/primary"
+            app:endIconMode="clear_text"
+            app:startIconDrawable="@drawable/ic_outline_calendar_today_24"
+            app:startIconTint="@color/primary">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="date" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_below="@id/date"
+            android:id="@+id/lb2"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="20dp"
+            android:hint="Subject Name"
+            android:textColorHint="@color/primary"
+            app:boxStrokeColor="@color/primary"
+            app:startIconDrawable="@drawable/ic_baseline_edit_24"
+            app:startIconTint="@color/primary">
+
+            <AutoCompleteTextView
+                android:id="@+id/subject_name"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:inputType="none"
+                android:maxLines="2"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_below="@id/lb2"
+            android:id="@+id/lb3"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="20dp"
+            android:hint="Teacher's  Name"
+            android:textColorHint="@color/primary"
+            app:boxStrokeColor="@color/primary"
+            app:startIconDrawable="@drawable/ic_color_person_24"
+            app:startIconTint="@color/primary">
+
+            <AutoCompleteTextView
+                android:id="@+id/teacher_name"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:inputType="none"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:id="@+id/lb4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lb3"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/start_time"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/lb3"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:hint="Start at"
+                android:textColorHint="@color/primary"
+                app:boxStrokeColor="@color/primary"
+                app:endIconMode="clear_text"
+                app:startIconDrawable="@drawable/ic_baseline_schedule_24"
+                app:startIconTint="@color/primary">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:inputType="textPersonName"
+                    android:textAlignment="center" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/end_time"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/lb3"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="20dp"
+                android:layout_toRightOf="@id/start_time"
+                android:layout_weight="1"
+                android:hint="End at"
+                android:textColorHint="@color/primary"
+                app:boxStrokeColor="@color/primary"
+                app:endIconMode="clear_text"
+                app:startIconDrawable="@drawable/ic_baseline_schedule_24"
+                app:startIconTint="@color/primary">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:inputType="textPersonName"
+                    android:textAlignment="center" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <CheckBox
+            android:id="@+id/need_projector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lb4"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="20dp"
+            android:text="Need a projector"
+            android:buttonTint="@color/primary"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/primary"
+            />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_below="@id/need_projector"
+            android:id="@+id/lb5"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="20dp"
+            android:hint="@string/projector"
+            android:textColorHint="@color/primary"
+            app:boxStrokeColor="@color/primary"
+            app:startIconDrawable="@drawable/ic_color_person_24"
+            app:startIconTint="@color/primary">
+
+            <AutoCompleteTextView
+                android:id="@+id/projector_name"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:inputType="none"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

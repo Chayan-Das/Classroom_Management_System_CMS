@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Staff.Maintanance.BatchActivity">
+
+    <LinearLayout
+        android:id="@+id/chip1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/primary"
+        android:gravity="center"
+        android:layout_marginBottom="5dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:fontFamily="serif"
+            android:gravity="center"
+            android:text="Batch"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            tools:ignore="RtlCompat" />
+
+        <ImageButton
+            android:layout_width="45dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="-50dp"
+            android:background="@null"
+            android:contentDescription="@string/todo"
+            android:src="@drawable/ic_baseline_arrow_back_ios_24"
+            app:tint="@color/white"
+            tools:ignore="ContentDescription" />
+
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_below="@id/chip1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp">
+
+        <TextView
+            android:id="@+id/label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:text="@string/all_batches"
+            android:textColor="@color/primary"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/label1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="("
+            android:textColor="@color/primary"
+            android:layout_toRightOf="@id/label"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:id="@+id/count_batch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:layout_toRightOf="@id/label1"
+            android:text="0"
+            android:textColor="@color/primary"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/level3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=")"
+            android:layout_marginStart="2dp"
+            android:textColor="@color/primary"
+            android:layout_toRightOf="@id/count_batch"
+            android:textStyle="bold" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/all_batches_recview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/label"
+            android:clickable="true"
+            android:layout_marginTop="15dp" />
+
+
+
+
+    </RelativeLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/create_batch_dialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="10dp"
+        android:backgroundTint="@color/primary"
+        android:elevation="3dp"
+        android:src="@drawable/ic_baseline_add_24"
+        android:tint="@color/white"
+        android:contentDescription="TODO" />
+
+
+
+
+
+</RelativeLayout>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".account.Signup">
+    tools:context=".Student.Signup">
 
 
     <LinearLayout
@@ -29,6 +29,7 @@
             tools:ignore="RtlCompat" />
 
         <ImageButton
+            android:id="@+id/backBtn"
             android:layout_width="45dp"
             android:layout_height="match_parent"
             android:layout_gravity="center_vertical"
@@ -198,9 +199,35 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:text="@string/create_account"
-        android:textStyle="bold"
         android:background="@color/primary"
-        android:textColor="@color/white" />
+        android:text="@string/create_account"
+        android:textColor="@color/white"
+        android:textStyle="bold" />
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:visibility="gone"
+        android:id="@+id/progress_dialog"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        app:cardCornerRadius="5dp"
+        android:layout_centerInParent="true"
+        android:padding="20dp"
+        app:strokeColor="@color/primary"
+        app:strokeWidth="2dp"
+        app:cardElevation="18dp"
+        >
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/loading_splash"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_colorFilter="@color/loading"
+            app:lottie_rawRes="@raw/loading" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+
 
 </RelativeLayout>

@@ -11,7 +11,9 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_gravity="center"
         >
 
         <ImageView
@@ -21,7 +23,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="5dp"
             android:src="@drawable/givekey"
-            app:tint="#389B14" />
+            app:tint="@color/primary" />
 
 
         <TextView

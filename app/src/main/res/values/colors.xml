@@ -2,9 +2,10 @@
 <resources>
 
 
-    <color name="primary">#1E4175</color>
+    <color name="primary">#0A0F37</color>
     <color name="black">#000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="loading">#0A0F37</color>
 
 
 

@@ -20,7 +20,7 @@ public class SplashScreen extends AppCompatActivity {
     //variables
 
     LottieAnimationView lottieAnimationView;
-    TextView nointernet;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +29,7 @@ public class SplashScreen extends AppCompatActivity {
 
 
         lottieAnimationView = findViewById(R.id.loading_splash);
-        nointernet = findViewById(R.id.no_internet);
+
 
 
         //lottieAnimationView.animate().translationX(-1600).setDuration(300).setStartDelay(5920);
@@ -39,9 +39,7 @@ public class SplashScreen extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                //Intent intent = new Intent(SplashScreen.this, MainActivity.class);
-                //startActivity(intent);
-                //finish();
+
 
 
                 show();
@@ -63,9 +61,7 @@ public class SplashScreen extends AppCompatActivity {
             finish();
         }
 
-        else {
-            nointernet.setVisibility(View.VISIBLE);
-        }
+
     }
 
 

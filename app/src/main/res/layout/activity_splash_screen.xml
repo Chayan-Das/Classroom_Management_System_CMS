@@ -9,38 +9,31 @@
 
     <ImageView
         android:id="@+id/logo"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
         android:layout_centerInParent="true"
         android:contentDescription="@string/todo"
-        android:src="@drawable/logo"
-        />
+        android:src="@drawable/logo" />
 
 
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/loading_splash"
-        android:layout_width="140dp"
-        android:layout_height="140dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="120dp"
-        android:tint="@color/black"
-        app:lottie_autoPlay="true"
-        app:lottie_loop="true"
-        app:lottie_rawRes="@raw/loading" />
-
-
-    <TextView
-        android:id="@+id/no_internet"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="120dp"
+        android:orientation="vertical"
         android:layout_alignParentBottom="true"
-        android:background="#FD0000"
-        android:padding="5dp"
-        android:text="@string/no_connection"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        android:visibility="invisible" />
+        >
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/loading_splash"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_colorFilter="@color/loading"
+            app:lottie_rawRes="@raw/loading" />
+
+    </LinearLayout>
+
+
 
 </RelativeLayout>

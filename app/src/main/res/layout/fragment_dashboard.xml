@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Student.DashboardFragment">
+    tools:context=".Student.Dashboard.DashboardFragment">
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/app_bar"
@@ -23,9 +23,12 @@
                 android:layout_width="53dp"
                 android:layout_height="53dp"
                 android:padding="6dp"
-                app:civ_circle_background_color="@color/primary"
                 android:src="@drawable/ic_outline_person_24"
-                android:tint="@color/white" />
+                android:tint="@color/white"
+                android:tintMode="src_in"
+                app:civ_border_color="@color/primary"
+                app:civ_border_width="1dp"
+                app:civ_circle_background_color="@color/white" />
 
 
             <ImageButton
@@ -57,12 +60,12 @@
         android:layout_marginBottom="8dp"
         android:background="@null"
         app:tabGravity="center"
-        app:tabIndicatorAnimationMode="elastic"
-        app:tabIndicatorGravity="stretch"
         app:tabIndicator="@drawable/bottom_button"
-        app:tabIndicatorColor="@color/primary"
-        app:tabMode="fixed"
+        app:tabIndicatorAnimationMode="elastic"
+        app:tabIndicatorColor="@null"
+        app:tabIndicatorGravity="stretch"
         app:tabInlineLabel="true"
+        app:tabMode="fixed"
         app:tabRippleColor="@color/primary"
         app:tabSelectedTextColor="@color/primary"
         app:tabTextColor="@color/primary" />

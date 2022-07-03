@@ -47,6 +47,10 @@
     <string name="batch_name">Batch Name</string>
     <string name="_2k">2k</string>
     <string name="add">Add</string>
+    <string name="welcome">Welcome</string>
+    <string name="academic_year">Academic Year</string>
+    <string name="projector">Projector</string>
+    <string name="all_batches">All Batches</string>
 
 
 </resources>

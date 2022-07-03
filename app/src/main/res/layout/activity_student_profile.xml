@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Student.StudentProfile">
+
+    <RelativeLayout
+        android:id="@+id/chip1"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/primary">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="My Profile"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:textColor="@color/white"
+            android:textSize="19sp"
+            android:fontFamily="serif"
+            android:textStyle="bold"
+            />
+
+        <ImageButton
+            android:id="@+id/backBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="20dp"
+            android:background="@null"
+            android:src="@drawable/ic_baseline_arrow_back_ios_24"
+            app:tint="@color/white" />
+
+
+    </RelativeLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="260dp">
+
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/pro_image"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp"
+                        android:padding="6dp"
+                        android:src="@drawable/ic_outline_person_24"
+                        android:tint="@color/white"
+                        app:civ_border_color="@color/primary"
+                        app:civ_border_width="1dp"
+                        app:civ_circle_background_color="@color/white" />
+
+
+                    <TextView
+                        android:id="@+id/my_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/pro_image"
+                        android:layout_centerHorizontal="true"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="10dp"
+                        android:text="Name"
+                        android:textColor="@color/primary"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+
+
+
+                </RelativeLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_centerHorizontal="true"
+                    app:cardElevation="5dp"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="160dp"
+                    >
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
+                        <LinearLayout
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="ID"
+                                android:textStyle="bold"
+                                android:textColor="@color/primary"
+                                />
+                            <TextView
+                                android:id="@+id/my_id"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="125"
+                                android:textStyle="bold"
+                                android:inputType="number"
+                                android:paddingTop="10dp"
+                                android:textColor="@color/black"/>
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Year"
+                                android:textStyle="bold"
+                                android:paddingTop="10dp"
+                                android:textColor="@color/primary"
+                                />
+                            <EditText
+                                android:id="@+id/my_year"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="1205"
+                                android:textStyle="bold"
+                                android:inputType="text"
+                                android:textColor="@color/black"/>
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Batch"
+                                android:textStyle="bold"
+                                android:textColor="@color/primary"
+                                />
+                            <TextView
+                                android:id="@+id/my_batch"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="360"
+                                android:textStyle="bold"
+                                android:paddingTop="10dp"
+                                android:textColor="@color/black"/>
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                >
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_marginStart="20dp"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/my_email"
+                        android:layout_gravity="center_vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:drawablePadding="20dp"
+                        android:drawableTint="@color/primary"
+                        android:drawableStart="@drawable/ic_outline_email_24"
+                        android:text="Wiliam@gmail.com"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <EditText
+                        android:id="@+id/my_phone"
+                        android:layout_gravity="center_vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="phone"
+                        android:layout_marginStart="18dp"
+                        android:textColor="@color/black"
+                        android:drawableTint="@color/primary"
+                        android:drawablePadding="10dp"
+                        android:drawableStart="@drawable/ic_outline_phone_android_24"
+                        android:text="+266 225 225"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+
+    </ScrollView>
+
+
+
+
+
+
+
+</LinearLayout>
+
