@@ -21,7 +21,7 @@
         <activity
             android:name=".Student.StudentMain1Activity"
             android:exported="true"
-            android:windowSoftInputMode="adjustResize|adjustPan"></activity>
+            android:windowSoftInputMode="adjustResize|adjustPan" />
         <activity
             android:name=".Staff.Maintanance.BatchDetailsStaff"
             android:exported="false" />
@@ -58,7 +58,15 @@
             android:exported="true" />
         <activity
             android:name=".Staff.Maintanance.Addkey"
-            android:exported="true" />
+            android:exported="true">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
     </application>
 
 </manifest>

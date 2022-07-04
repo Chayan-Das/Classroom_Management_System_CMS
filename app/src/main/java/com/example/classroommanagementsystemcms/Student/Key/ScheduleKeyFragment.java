@@ -1,66 +1,258 @@
 package com.example.classroommanagementsystemcms.Student.Key;
 
+import android.icu.text.SimpleDateFormat;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.example.classroommanagementsystemcms.R;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link ScheduleKeyFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import java.util.Calendar;
+import java.util.HashMap;
+
+
 public class ScheduleKeyFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    TextView room_no, no_key;
+    Button release_key;
+    RelativeLayout purchase_status;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
 
     public ScheduleKeyFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment ScheduleKeyFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static ScheduleKeyFragment newInstance(String param1, String param2) {
-        ScheduleKeyFragment fragment = new ScheduleKeyFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_schedule_key, container, false);
+
+        View view = inflater.inflate(R.layout.fragment_schedule_key, container, false);
+        mainFragment(view);
+
+        return view;
+    }
+
+    private void mainFragment(View view) {
+
+        room_no=view.findViewById(R.id.room_no);
+        release_key=view.findViewById(R.id.release_key);
+        no_key=view.findViewById(R.id.no_key);
+        purchase_status=view.findViewById(R.id.purchase_status);
+
+
+        FirebaseAuth fAuth;
+        fAuth= FirebaseAuth.getInstance();
+
+        DatabaseReference ref= FirebaseDatabase.getInstance().getReference("Student_Account");
+        ref.orderByChild("studentid").equalTo(fAuth.getUid()).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for(DataSnapshot ds: snapshot.getChildren()){
+
+                    String accessid = ""+ds.child("studentid").getValue();
+                    String roomno = ""+ds.child("Purchase Room").getValue();
+
+
+
+
+                    if(roomno.isEmpty()){
+
+                        no_key.setVisibility(View.VISIBLE);
+                        purchase_status.setVisibility(View.GONE);
+
+                    }
+
+                    else {
+                        no_key.setVisibility(View.GONE);
+                        purchase_status.setVisibility(View.VISIBLE);
+
+                        room_no.setText(roomno);
+
+
+
+
+                        release_key.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+
+
+                                DatabaseReference ref= FirebaseDatabase.getInstance().getReference("Student_Account");
+                                ref.orderByChild("studentid").equalTo(fAuth.getUid()).addValueEventListener(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                        for(DataSnapshot ds: snapshot.getChildren()){
+
+                                            String accessid = ""+ds.child("studentid").getValue();
+
+
+                                            HashMap<String, Object> hashMap2 = new HashMap<>();
+                                            hashMap2.put("Purchase Room","");
+
+
+
+                                            DatabaseReference ref2= FirebaseDatabase.getInstance().getReference("Student_Account").child(accessid);
+                                            ref2.updateChildren(hashMap2).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                @Override
+                                                public void onSuccess(Void unused) {
+
+
+
+                                                    DatabaseReference ref= FirebaseDatabase.getInstance().getReference("Rooms");
+                                                    ref.orderByChild("id").addValueEventListener(new ValueEventListener() {
+                                                        @Override
+                                                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                                            for(DataSnapshot ds: snapshot.getChildren()){
+
+                                                                String rid = ""+ds.child("id").getValue();
+
+                                                                HashMap<String, Object> hashMap3 = new HashMap<>();
+                                                                hashMap3.put("purchasedby","empty");
+
+                                                                DatabaseReference ref2= FirebaseDatabase.getInstance().getReference("Rooms").child(rid);
+                                                                ref2.updateChildren(hashMap3).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                                    @Override
+                                                                    public void onSuccess(Void unused) {
+
+
+
+                                                                        DatabaseReference ref= FirebaseDatabase.getInstance().getReference("Key Purchase Record");
+                                                                        ref.orderByChild("purchaseid").addValueEventListener(new ValueEventListener() {
+                                                                            @Override
+                                                                            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                                                                for(DataSnapshot ds: snapshot.getChildren()){
+
+                                                                                    String purchaseidd = ""+ds.child("purchaseid").getValue();
+
+                                                                                    String time = new SimpleDateFormat("hh:mm aa" ).format(Calendar.getInstance().getTime());
+
+                                                                                    HashMap<String, Object> hashMap4 = new HashMap<>();
+                                                                                    hashMap4.put("Release Time",""+time);
+
+                                                                                    DatabaseReference ref4= FirebaseDatabase.getInstance().getReference("Key Purchase Record").child(purchaseidd);
+                                                                                    ref4.updateChildren(hashMap4).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                                                        @Override
+                                                                                        public void onSuccess(Void unused) {
+
+
+
+                                                                                        }
+                                                                                    });
+
+
+
+
+
+
+
+
+                                                                                }
+
+                                                                            }
+
+                                                                            @Override
+                                                                            public void onCancelled(@NonNull DatabaseError error) {
+
+                                                                            }
+                                                                        });
+
+
+
+
+                                                                    }
+                                                                });
+
+
+
+
+
+
+
+                                                            }
+
+                                                        }
+
+                                                        @Override
+                                                        public void onCancelled(@NonNull DatabaseError error) {
+
+                                                        }
+                                                    });
+
+
+
+
+
+
+
+                                                }
+                                            }).addOnFailureListener(new OnFailureListener() {
+                                                @Override
+                                                public void onFailure(@NonNull Exception e) {
+
+                                                }
+                                            });
+
+
+                                        }
+
+                                    }
+
+                                    @Override
+                                    public void onCancelled(@NonNull DatabaseError error) {
+
+                                    }
+                                });
+
+
+
+
+
+                            }
+                        });
+
+                    }
+
+
+
+
+
+
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
+
+
+
+
     }
 }

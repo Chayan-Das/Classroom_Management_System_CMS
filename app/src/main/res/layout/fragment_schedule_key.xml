@@ -7,7 +7,7 @@
     tools:context=".Student.Key.ScheduleKeyFragment">
 
     <TextView
-        android:visibility="gone"
+
         android:id="@+id/no_key"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -18,6 +18,7 @@
         />
 
     <RelativeLayout
+        android:visibility="gone"
         android:id="@+id/purchase_status"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -75,8 +76,7 @@
             android:backgroundTint="@color/primary"
             android:text="Release Key"
             android:textAllCaps="false"
-            android:textColor="@color/white"
-            />
+            android:textColor="@color/white" />
 
 
     </RelativeLayout>

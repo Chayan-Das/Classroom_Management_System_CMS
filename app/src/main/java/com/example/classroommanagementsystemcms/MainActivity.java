@@ -9,6 +9,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.classroommanagementsystemcms.Staff.StaffMainActivity;
 import com.example.classroommanagementsystemcms.Student.StudentMain1Activity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -150,6 +151,45 @@ public class MainActivity extends AppCompatActivity {
                     mPassword.getEditText().getText().clear();
 
                     Intent intent = new Intent(MainActivity.this, StudentMain1Activity.class);
+
+                    // Sending Email to Dashboard Activity using intent.
+                    intent.putExtra(userEmail, email);
+
+                    startActivity(intent);
+
+                }
+                else {
+
+                    checkIfEmailExist1();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+
+    private void checkIfEmailExist1() {
+
+        final String userEnteredUsername = mEmail.getEditText().getText().toString();
+
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Staff Account");
+        Query query = reference.orderByChild("Email");
+
+        query.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                if (snapshot.exists()) {
+
+                    mEmail.getEditText().getText().clear();
+
+                    mPassword.getEditText().getText().clear();
+
+                    Intent intent = new Intent(MainActivity.this, StaffMainActivity.class);
 
                     // Sending Email to Dashboard Activity using intent.
                     intent.putExtra(userEmail, email);

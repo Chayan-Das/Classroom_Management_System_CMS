@@ -240,6 +240,7 @@ public class Signup extends AppCompatActivity {
                                 hashMap.put("Role","Student");
                                 hashMap.put("Batch","2k"+roll.substring(0,2));
                                 hashMap.put("Type","Regular");
+                                hashMap.put("Purchase Room","No");
                                 hashMap.put("ProfileImage",""+downloadimageuri);
 
                                 DatabaseReference ref=FirebaseDatabase.getInstance().getReference("Student_Account");
