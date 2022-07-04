@@ -37,28 +37,36 @@
         <activity
             android:name=".Staff.StaffMainActivity"
             android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
         <activity
             android:name=".Student.StudentMainActivity"
             android:exported="true"
             android:windowSoftInputMode="stateVisible">
+
+        </activity>
+        <activity
+            android:name=".SplashScreen"
+            android:exported="true" />
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
-        <activity
-            android:name=".SplashScreen"
-            android:exported="true" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="false" />
+
         <activity
             android:name=".Student.Signup"
             android:exported="true" />

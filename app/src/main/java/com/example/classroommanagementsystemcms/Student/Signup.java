@@ -37,7 +37,7 @@ import java.util.HashMap;
 
 public class Signup extends AppCompatActivity {
 
-    TextInputLayout Name,Id,Email,Password;
+    TextInputLayout Name,Id,Email,Password,phone;
     ImageView imageView;
     Button Create;
     ImageButton backBtn;
@@ -62,6 +62,7 @@ public class Signup extends AppCompatActivity {
 
         Name = findViewById(R.id.name);
         Id = findViewById(R.id.roll);
+        phone = findViewById(R.id.phone);
         Email = findViewById(R.id.email);
         Password = findViewById(R.id.password);
         imageView = findViewById(R.id.insetr_student_image);
@@ -119,6 +120,7 @@ public class Signup extends AppCompatActivity {
     String email;
     String password;
     String roll;
+    String Phone;
 
     private void inputData() {
         progress_dialog.setVisibility(View.VISIBLE);
@@ -127,6 +129,7 @@ public class Signup extends AppCompatActivity {
        roll = Id.getEditText().getText().toString();
        email = Email.getEditText().getText().toString();
        password = Password.getEditText().getText().toString();
+        Phone = phone.getEditText().getText().toString();
 
         if(TextUtils.isEmpty(email)) {
             Email.setError("Email is required");
@@ -144,6 +147,11 @@ public class Signup extends AppCompatActivity {
         }
         if(TextUtils.isEmpty(roll)) {
             Id.setError("Student Id is empty");
+            return;
+        }
+
+        if(TextUtils.isEmpty(Phone)) {
+            Id.setError("Phone number is empty");
             return;
         }
 
@@ -181,6 +189,7 @@ public class Signup extends AppCompatActivity {
             hashMap.put("Name",""+fullname);
             hashMap.put("Email",""+email);
             hashMap.put("Roll",""+roll);
+            hashMap.put("Phone Number",""+Phone);
             hashMap.put("Role","Student");
             hashMap.put("Batch","2k"+roll.substring(0,2));
             hashMap.put("Type","Regular");
@@ -228,6 +237,7 @@ public class Signup extends AppCompatActivity {
                                 hashMap.put("Name",""+fullname);
                                 hashMap.put("Email",""+email);
                                 hashMap.put("Roll",""+roll);
+                                hashMap.put("Phone Number",""+Phone);
                                 hashMap.put("Role","Student");
                                 hashMap.put("Batch","2k"+roll.substring(0,2));
                                 hashMap.put("Type","Regular");

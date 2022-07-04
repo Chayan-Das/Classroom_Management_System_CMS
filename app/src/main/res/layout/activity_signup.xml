@@ -57,18 +57,7 @@
     </LinearLayout>
 
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/insetr_student_image"
-        android:layout_width="104dp"
-        android:layout_height="104dp"
-        android:layout_below="@id/a"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="4dp"
-        android:background="@drawable/circle"
-        android:elevation="2dp"
-        android:src="@drawable/ic_color_person_24"
-        android:tint="@color/primary"
-        app:civ_border_color="@color/white" />
+
 
 
 
@@ -77,13 +66,25 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="240dp"
+        android:layout_marginTop="110dp"
         android:layout_marginBottom="80dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/insetr_student_image"
+                android:layout_width="104dp"
+                android:layout_height="104dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="4dp"
+                android:background="@drawable/circle"
+                android:elevation="2dp"
+                android:src="@drawable/ic_color_person_24"
+                android:tint="@color/primary"
+                app:civ_border_color="@color/white" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -134,8 +135,30 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/email"
+                    android:id="@+id/phone"
                     android:layout_below="@id/roll"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:hint="phone number"
+                    android:textColorHint="@color/primary"
+                    app:boxStrokeColor="@color/primary"
+                    app:startIconDrawable="@drawable/ic_outline_phone_android_24"
+                    app:endIconMode="clear_text"
+                    app:startIconTint="@color/primary">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/email"
+                    android:layout_below="@id/phone"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

@@ -23,12 +23,22 @@ import com.example.classroommanagementsystemcms.Staff.Maintanance.BatchDetailsSt
 import com.example.classroommanagementsystemcms.Staff.Maintanance.Batchmodel;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.orhanobut.dialogplus.DialogPlus;
 import com.orhanobut.dialogplus.ViewHolder;
 
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Locale;
 import java.util.SimpleTimeZone;
 
 public class Roomlist extends FirebaseRecyclerAdapter<Roommodel, Roomlist.myviewholder> {
@@ -69,16 +79,118 @@ public class Roomlist extends FirebaseRecyclerAdapter<Roommodel, Roomlist.myview
                     }
                 });
 
-                //String room = room_no.getText().toString();
-                //room_no.setText(model.getRoomname());
+
+                room_no.setText(model.getRoomname());
+
 
                 coform_purchase.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
 
-                        String date = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(Calendar.getInstance().getTime());
 
-                        room_no.setText(date);
+
+
+                        FirebaseAuth fAuth;
+                        fAuth= FirebaseAuth.getInstance();
+
+                        DatabaseReference ref= FirebaseDatabase.getInstance().getReference("Student_Account");
+                        ref.orderByChild("studentid").equalTo(fAuth.getUid()).addValueEventListener(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                for(DataSnapshot ds: snapshot.getChildren()){
+
+                                    String name = ""+ds.child("Name").getValue();
+                                    String roll = ""+ds.child("Roll").getValue();
+                                    String phone = ""+ds.child("Phone Number").getValue();
+
+                                    String time = new SimpleDateFormat("hh:mm aa" ).format(Calendar.getInstance().getTime());
+
+                                    String date = new SimpleDateFormat("dd/MM/yyyy" ).format(Calendar.getInstance().getTime());
+
+
+                                    room_no.setText(date);
+
+
+
+
+                                    DatabaseReference ref1= FirebaseDatabase.getInstance().getReference("Key Purchase Record");
+                                    String purchase_id = ref1.push().getKey();
+                                    HashMap<String, Object> hashMap1 = new HashMap<>();
+                                    hashMap1.put("purchaseid",""+purchase_id);
+                                    hashMap1.put("Student Name",""+name);
+                                    hashMap1.put("Roll",""+roll);
+                                    hashMap1.put("Phone no",""+phone);
+                                    hashMap1.put("Date",""+date);
+                                    hashMap1.put("Taking Time",""+time);
+                                    hashMap1.put("Room no",""+model.getRoomname());
+
+
+                                    ref1.child(purchase_id).setValue(hashMap1)
+                                            .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                @Override
+                                                public void onSuccess(Void unused) {
+
+                                                    HashMap<String, Object> hashMap2 = new HashMap<>();
+                                                    hashMap2.put("Purchase key","Yes");
+
+                                                    String Sid = ""+ds.child("studentid").getValue();
+
+
+                                                    DatabaseReference ref2= FirebaseDatabase.getInstance().getReference("Student_Account").child(Sid);
+                                                    ref2.updateChildren(hashMap2).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                        @Override
+                                                        public void onSuccess(Void unused) {
+
+                                                            HashMap<String, Object> hashMap3 = new HashMap<>();
+                                                            hashMap3.put("purchaseby",""+name);
+
+                                                            String rid = model.getId();
+
+
+                                                            DatabaseReference ref2= FirebaseDatabase.getInstance().getReference("Rooms").child(rid);
+                                                            ref2.updateChildren(hashMap3).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                                @Override
+                                                                public void onSuccess(Void unused) {
+
+                                                                    l1.setVisibility(View.GONE);
+
+                                                                    success_message.setVisibility(View.VISIBLE);
+
+
+
+                                                                }
+                                                            });
+
+
+
+                                                        }
+                                                    });
+
+
+
+                                                }
+                                            }).addOnFailureListener(new OnFailureListener() {
+                                        @Override
+                                        public void onFailure(@NonNull Exception e) {
+
+
+
+                                        }
+                                    });
+
+
+
+                                }
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError error) {
+
+                            }
+                        });
+
+
+
 
 
                     }

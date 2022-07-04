@@ -65,6 +65,15 @@ public class MaintananceFragment extends Fragment {
             }
         });
 
+        roomcard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                startActivity(new Intent(getActivity().getApplicationContext(), com.example.classroommanagementsystemcms.Staff.Maintanance.Addkey.class));
+
+            }
+        });
+
     }
 
 }

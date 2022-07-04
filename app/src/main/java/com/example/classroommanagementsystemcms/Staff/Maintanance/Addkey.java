@@ -86,12 +86,13 @@ public class Addkey extends AppCompatActivity {
         String building = autoCompleteTextView1.getText().toString();
         String status = "empty";
         String purchasedby = "No one";
+        String id = reference.push().getKey();
 
 
         if (!TextUtils.isEmpty(roomname)){
 
-            String id = reference.push().getKey();
-            Roommodel roommodel= new Roommodel(roomname,type,building,status,purchasedby);
+
+            Roommodel roommodel= new Roommodel(roomname,type,building,status,purchasedby,id);
 
             reference.child(id).setValue(roommodel);
 
