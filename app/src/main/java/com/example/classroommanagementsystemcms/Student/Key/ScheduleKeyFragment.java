@@ -118,92 +118,7 @@ public class ScheduleKeyFragment extends Fragment {
                                                 @Override
                                                 public void onSuccess(Void unused) {
 
-
-
-                                                    DatabaseReference ref= FirebaseDatabase.getInstance().getReference("Rooms");
-                                                    ref.orderByChild("id").addValueEventListener(new ValueEventListener() {
-                                                        @Override
-                                                        public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                                            for(DataSnapshot ds: snapshot.getChildren()){
-
-                                                                String rid = ""+ds.child("id").getValue();
-
-                                                                HashMap<String, Object> hashMap3 = new HashMap<>();
-                                                                hashMap3.put("purchasedby","empty");
-
-                                                                DatabaseReference ref2= FirebaseDatabase.getInstance().getReference("Rooms").child(rid);
-                                                                ref2.updateChildren(hashMap3).addOnSuccessListener(new OnSuccessListener<Void>() {
-                                                                    @Override
-                                                                    public void onSuccess(Void unused) {
-
-
-
-                                                                        DatabaseReference ref= FirebaseDatabase.getInstance().getReference("Key Purchase Record");
-                                                                        ref.orderByChild("purchaseid").addValueEventListener(new ValueEventListener() {
-                                                                            @Override
-                                                                            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                                                                for(DataSnapshot ds: snapshot.getChildren()){
-
-                                                                                    String purchaseidd = ""+ds.child("purchaseid").getValue();
-
-                                                                                    String time = new SimpleDateFormat("hh:mm aa" ).format(Calendar.getInstance().getTime());
-
-                                                                                    HashMap<String, Object> hashMap4 = new HashMap<>();
-                                                                                    hashMap4.put("Release Time",""+time);
-
-                                                                                    DatabaseReference ref4= FirebaseDatabase.getInstance().getReference("Key Purchase Record").child(purchaseidd);
-                                                                                    ref4.updateChildren(hashMap4).addOnSuccessListener(new OnSuccessListener<Void>() {
-                                                                                        @Override
-                                                                                        public void onSuccess(Void unused) {
-
-
-
-                                                                                        }
-                                                                                    });
-
-
-
-
-
-
-
-
-                                                                                }
-
-                                                                            }
-
-                                                                            @Override
-                                                                            public void onCancelled(@NonNull DatabaseError error) {
-
-                                                                            }
-                                                                        });
-
-
-
-
-                                                                    }
-                                                                });
-
-
-
-
-
-
-
-                                                            }
-
-                                                        }
-
-                                                        @Override
-                                                        public void onCancelled(@NonNull DatabaseError error) {
-
-                                                        }
-                                                    });
-
-
-
-
-
+                                                    Other();
 
 
                                                 }
@@ -232,11 +147,9 @@ public class ScheduleKeyFragment extends Fragment {
                             }
                         });
 
+
+
                     }
-
-
-
-
 
 
                 }
@@ -255,4 +168,86 @@ public class ScheduleKeyFragment extends Fragment {
 
 
     }
+
+    private void Other() {
+
+        DatabaseReference ref= FirebaseDatabase.getInstance().getReference("Rooms");
+        ref.orderByChild("id").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for(DataSnapshot ds: snapshot.getChildren()){
+
+                    String rid = ""+ds.child("id").getValue();
+
+                    HashMap<String, Object> hashMap3 = new HashMap<>();
+                    hashMap3.put("purchasedby","empty");
+
+                    DatabaseReference ref2= FirebaseDatabase.getInstance().getReference("Rooms").child(rid);
+                    ref2.updateChildren(hashMap3).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void unused) {
+
+
+
+                            other1();
+
+                        }
+                    });
+
+
+
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+    private void other1() {
+
+        DatabaseReference refer= FirebaseDatabase.getInstance().getReference("Key Purchase Record");
+        refer.orderByChild("purchaseid").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for(DataSnapshot ds: snapshot.getChildren()){
+
+                    String time = new SimpleDateFormat("hh:mm aa" ).format(Calendar.getInstance().getTime());
+                    String purchaseidd = ""+ds.child("purchaseid").getValue();
+
+                    HashMap<String, Object> hashMap4 = new HashMap<>();
+                    hashMap4.put("Release Time",""+time);
+
+
+                    DatabaseReference ref4= FirebaseDatabase.getInstance().getReference("Key Purchase Record").child(purchaseidd);
+                    ref4.updateChildren(hashMap4).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void unused) {
+
+
+
+                        }
+                    });
+
+
+
+
+
+
+
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+
 }

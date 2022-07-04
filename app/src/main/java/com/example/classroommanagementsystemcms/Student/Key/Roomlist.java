@@ -103,13 +103,13 @@ public class Roomlist extends FirebaseRecyclerAdapter<Roommodel, Roomlist.myview
 
 
 
+
                                     String date = new SimpleDateFormat("dd/MM/yyyy" ).format(Calendar.getInstance().getTime());
 
                                     String time = new SimpleDateFormat("hh:mm aa" ).format(Calendar.getInstance().getTime());
 
 
-                                    DatabaseReference ref1= FirebaseDatabase.getInstance().getReference("Key Purchase Record");
-                                    String purchase_id = ref1.push().getKey();
+                                    String purchase_id = ""+System.currentTimeMillis();
 
                                     HashMap<String, Object> hashMap1 = new HashMap<>();
                                     hashMap1.put("purchaseid",""+purchase_id);
@@ -117,27 +117,80 @@ public class Roomlist extends FirebaseRecyclerAdapter<Roommodel, Roomlist.myview
                                     hashMap1.put("Roll",""+roll);
                                     hashMap1.put("Phone no",""+phone);
                                     hashMap1.put("Date",""+date);
-                                    hashMap1.put("Time",""+time);
+                                    hashMap1.put("Purchase Time",""+time);
 
                                     hashMap1.put("Room no",""+model.getRoomname());
 
-
-                                    assert purchase_id != null;
-                                    ref1.child(purchase_id).setValue(hashMap1)
+                                    DatabaseReference ref8= FirebaseDatabase.getInstance().getReference("Key Purchase Record");
+                                    ref8.child(purchase_id+roll).setValue(hashMap1)
                                             .addOnSuccessListener(new OnSuccessListener<Void>() {
                                                 @Override
                                                 public void onSuccess(Void unused) {
+
+                                                    Otheroperation();
 
                                                 }
                                             }).addOnFailureListener(new OnFailureListener() {
                                         @Override
                                         public void onFailure(@NonNull Exception e) {
 
-
-
                                         }
                                     });
 
+
+
+
+
+
+
+                                }
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError error) {
+
+                            }
+                        });
+
+
+
+
+
+
+
+
+
+
+                    }
+                });
+
+
+
+                alertDialog.show();
+
+
+
+
+
+
+
+
+
+            }
+
+            private void Otheroperation() {
+                FirebaseAuth fAuth;
+                fAuth= FirebaseAuth.getInstance();
+
+                DatabaseReference refe= FirebaseDatabase.getInstance().getReference("Student_Account");
+                        refe.orderByChild("studentid").equalTo(fAuth.getUid()).addValueEventListener(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                for(DataSnapshot ds: snapshot.getChildren()){
+
+                                    String name = ""+ds.child("Name").getValue();
+                                    String roll = ""+ds.child("Roll").getValue();
+                                    String phone = ""+ds.child("Phone Number").getValue();
 
                                     HashMap<String, Object> hashMap2 = new HashMap<>();
                                     hashMap2.put("Purchase Room",""+model.getRoomname());
@@ -168,23 +221,12 @@ public class Roomlist extends FirebaseRecyclerAdapter<Roommodel, Roomlist.myview
                                         @Override
                                         public void onSuccess(Void unused) {
 
-                                            l1.setVisibility(View.GONE);
 
-                                            success_message.setVisibility(View.VISIBLE);
 
 
 
                                         }
                                     });
-
-
-
-
-
-
-
-
-
 
 
 
@@ -201,23 +243,6 @@ public class Roomlist extends FirebaseRecyclerAdapter<Roommodel, Roomlist.myview
 
                             }
                         });
-
-
-
-
-
-                    }
-                });
-
-
-
-                alertDialog.show();
-
-
-
-
-
-
 
 
 

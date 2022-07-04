@@ -138,7 +138,7 @@ public class MainActivity extends AppCompatActivity {
         final String userEnteredUsername = mEmail.getEditText().getText().toString();
 
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Student_Account");
-        Query query = reference.orderByChild("studentid");
+        Query query = reference.orderByChild("studentid").equalTo(userEnteredUsername);
 
         query.addValueEventListener(new ValueEventListener() {
             @Override
@@ -160,7 +160,23 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else {
 
-                    checkIfEmailExist1();
+                    if (snapshot.exists()) {
+
+                        mEmail.getEditText().getText().clear();
+
+                        mPassword.getEditText().getText().clear();
+
+                        Intent intent = new Intent(MainActivity.this, StaffMainActivity.class);
+
+
+
+                        startActivity(intent);
+
+                    }
+                    else {
+
+                        Toast.makeText(MainActivity.this, "Login not possible ", Toast.LENGTH_SHORT).show();
+                    }
                 }
             }
 
@@ -172,42 +188,5 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void checkIfEmailExist1() {
 
-        final String userEnteredUsername = mEmail.getEditText().getText().toString();
-
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Staff Account");
-        Query query = reference.orderByChild("Email");
-
-        query.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-
-                if (snapshot.exists()) {
-
-                    mEmail.getEditText().getText().clear();
-
-                    mPassword.getEditText().getText().clear();
-
-                    Intent intent = new Intent(MainActivity.this, StaffMainActivity.class);
-
-                    // Sending Email to Dashboard Activity using intent.
-                    intent.putExtra(userEmail, email);
-
-                    startActivity(intent);
-
-                }
-                else {
-
-                    Toast.makeText(MainActivity.this, "Login not possible ", Toast.LENGTH_SHORT).show();
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-
-    }
 }
