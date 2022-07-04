@@ -68,7 +68,7 @@ public class CustomKeyFragment extends Fragment {
 
         FirebaseRecyclerOptions<Roommodel> options =
                 new FirebaseRecyclerOptions.Builder<Roommodel>()
-                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Rooms").orderByChild("status").equalTo("empty"), Roommodel.class)
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Rooms").orderByChild("purchaseby").equalTo("empty"), Roommodel.class)
                         .build();
 
         adapter2=new Roomlist(options);

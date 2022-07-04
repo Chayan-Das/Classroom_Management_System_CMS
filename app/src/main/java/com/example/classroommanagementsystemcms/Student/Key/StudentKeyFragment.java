@@ -53,7 +53,7 @@ public class StudentKeyFragment extends Fragment {
 
         DashboardFragment.MainAdapter adapter=new DashboardFragment.MainAdapter(getChildFragmentManager());
 
-        adapter.AddFragment(new ScheduleKeyFragment(),"Schedule Purchase");
+        adapter.AddFragment(new ScheduleKeyFragment(),"Purchased Key");
         adapter.AddFragment(new CustomKeyFragment(),"Custom Purchase");
 
         viewPager.setAdapter(adapter);

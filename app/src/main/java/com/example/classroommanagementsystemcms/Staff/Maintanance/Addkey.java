@@ -85,7 +85,7 @@ public class Addkey extends AppCompatActivity {
         String type = autoCompleteTextView.getText().toString();
         String building = autoCompleteTextView1.getText().toString();
         String status = "empty";
-        String purchasedby = "No one";
+        String purchasedby = "empty";
         String id = reference.push().getKey();
 
 

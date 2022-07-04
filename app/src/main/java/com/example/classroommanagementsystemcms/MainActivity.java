@@ -9,7 +9,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Toast;
 
-import com.example.classroommanagementsystemcms.Student.StudentMainActivity;
+import com.example.classroommanagementsystemcms.Student.StudentMain1Activity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.button.MaterialButton;
@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 if (user != null) {
-                    Intent intent = new Intent(MainActivity.this, StudentMainActivity.class);
+                    Intent intent = new Intent(MainActivity.this, StudentMain1Activity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
                 }
@@ -149,7 +149,7 @@ public class MainActivity extends AppCompatActivity {
 
                     mPassword.getEditText().getText().clear();
 
-                    Intent intent = new Intent(MainActivity.this, StudentMainActivity.class);
+                    Intent intent = new Intent(MainActivity.this, StudentMain1Activity.class);
 
                     // Sending Email to Dashboard Activity using intent.
                     intent.putExtra(userEmail, email);

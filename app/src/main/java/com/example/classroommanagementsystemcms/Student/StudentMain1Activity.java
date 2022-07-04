@@ -3,16 +3,20 @@ package com.example.classroommanagementsystemcms.Student;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import android.app.Activity;
 import android.os.Bundle;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.EditText;
 
 import com.etebarian.meowbottomnavigation.MeowBottomNavigation;
 import com.example.classroommanagementsystemcms.R;
-import com.example.classroommanagementsystemcms.Student.CR.CrFragment;
+import com.example.classroommanagementsystemcms.Student.CR.CRFragment;
 import com.example.classroommanagementsystemcms.Student.Dashboard.DashboardFragment;
 import com.example.classroommanagementsystemcms.Student.Course.DownloadFragment;
 import com.example.classroommanagementsystemcms.Student.Key.StudentKeyFragment;
+import com.google.firebase.database.core.Context;
 
-public class StudentMainActivity extends AppCompatActivity {
+public class StudentMain1Activity extends AppCompatActivity {
 
     MeowBottomNavigation meo;
 
@@ -44,7 +48,7 @@ public class StudentMainActivity extends AppCompatActivity {
                         fragment=new StudentKeyFragment();
                         break;
                     case 3:
-                        fragment=new CrFragment();
+                        fragment=new CRFragment();
                         break;
 
                     case 4:
@@ -80,4 +84,6 @@ public class StudentMainActivity extends AppCompatActivity {
                 .replace(R.id.fragment_container,fragment)
                 .commit();
     }
+
+
 }

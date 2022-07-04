@@ -26,7 +26,6 @@ import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
@@ -202,7 +201,7 @@ public class Signup extends AppCompatActivity {
                     .addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void unused) {
-                            startActivity(new Intent(Signup.this, StudentMainActivity.class));
+                            startActivity(new Intent(Signup.this, StudentMain1Activity.class));
                             finish();
                             progress_dialog.setVisibility(View.GONE);
                         }
@@ -248,7 +247,7 @@ public class Signup extends AppCompatActivity {
                                         .addOnSuccessListener(new OnSuccessListener<Void>() {
                                             @Override
                                             public void onSuccess(Void unused) {
-                                                startActivity(new Intent(Signup.this, StudentMainActivity.class));
+                                                startActivity(new Intent(Signup.this, StudentMain1Activity.class));
                                                 finish();
                                                 progress_dialog.setVisibility(View.GONE);
                                             }

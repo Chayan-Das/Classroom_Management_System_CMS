@@ -1,4 +1,4 @@
-package com.example.classroommanagementsystemcms.Student.CR;
+package com.example.classroommanagementsystemcms.Teacher.Maintanance;
 
 import android.os.Bundle;
 
@@ -12,10 +12,10 @@ import com.example.classroommanagementsystemcms.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link CrFragment#newInstance} factory method to
+ * Use the {@link TeacherMaintananceFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class CrFragment extends Fragment {
+public class TeacherMaintananceFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,7 +26,7 @@ public class CrFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public CrFragment() {
+    public TeacherMaintananceFragment() {
         // Required empty public constructor
     }
 
@@ -36,11 +36,11 @@ public class CrFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment CrFragment.
+     * @return A new instance of fragment TeacherMaintananceFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static CrFragment newInstance(String param1, String param2) {
-        CrFragment fragment = new CrFragment();
+    public static TeacherMaintananceFragment newInstance(String param1, String param2) {
+        TeacherMaintananceFragment fragment = new TeacherMaintananceFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -61,6 +61,6 @@ public class CrFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_cr, container, false);
+        return inflater.inflate(R.layout.fragment_teacher_maintanance, container, false);
     }
 }

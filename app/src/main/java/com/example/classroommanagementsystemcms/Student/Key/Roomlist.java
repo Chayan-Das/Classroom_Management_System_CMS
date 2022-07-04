@@ -211,6 +211,13 @@ public class Roomlist extends FirebaseRecyclerAdapter<Roommodel, Roomlist.myview
             }
         });
 
+        holder.next.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                return false;
+            }
+        });
+
 
 
     }

@@ -28,6 +28,14 @@
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
     <style name="AppTheme" />
+    <style name="Theme.ClassroomManagementSystemCMS.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="Theme.ClassroomManagementSystemCMS.AppBarOverlay"
+        parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="Theme.ClassroomManagementSystemCMS.PopupOverlay"
+        parent="ThemeOverlay.AppCompat.Light" />
 
 
 

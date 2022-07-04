@@ -28,7 +28,7 @@
                 <RelativeLayout
                     android:id="@+id/portion1"
                     android:layout_width="match_parent"
-                    android:layout_height="140dp"
+                    android:layout_height="80dp"
                     android:background="@color/primary">
 
 
@@ -46,7 +46,7 @@
                             android:fontFamily="serif"
                             android:text="@string/welcome"
                             android:textColor="@color/white"
-                            android:textSize="35sp"
+                            android:textSize="25sp"
                             android:textStyle="bold" />
 
 
@@ -59,7 +59,7 @@
                 <RelativeLayout
                     android:id="@+id/portion2"
                     android:layout_width="match_parent"
-                    android:layout_height="120dp"
+                    android:layout_height="100dp"
                     android:layout_below="@+id/portion1"
                     android:background="@drawable/ic_wave"
                     android:backgroundTint="@color/primary" />
@@ -166,7 +166,7 @@
     <LinearLayout
         android:id="@+id/portion3"
         android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_height="100dp"
         android:layout_alignParentBottom="true"
         android:background="@drawable/ic_wave"
         android:backgroundTint="@color/primary"
