@@ -3,22 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginBottom="70dp"
     tools:context=".Student.Key.ScheduleKeyFragment">
 
-    <TextView
-
-        android:id="@+id/no_key"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="No Key Purchased"
-        android:layout_centerInParent="true"
-        android:textColor="@color/primary"
-        android:textStyle="bold"
-        />
-
     <RelativeLayout
-        android:visibility="gone"
         android:id="@+id/purchase_status"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -29,9 +17,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="35dp"
+            android:layout_marginTop="15dp"
             android:layout_marginRight="10dp"
-            android:layout_marginBottom="20dp"
             android:gravity="center_horizontal"
             android:orientation="horizontal">
 
@@ -45,36 +32,41 @@
                 android:textStyle="bold" />
 
 
-            <TextView
-                android:id="@+id/room_no"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_toRightOf="@id/room_no_title"
-                android:fontFamily="serif"
-                android:text="000"
-                android:textColor="@color/primary"
-                android:textStyle="bold" />
+
 
 
         </LinearLayout>
 
         <TextView
+            android:id="@+id/room_no"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/level2"
+            android:layout_below="@+id/level2"
             android:layout_centerHorizontal="true"
-            android:text="Do you want to release the key?"
+            android:layout_marginStart="5dp"
+            android:fontFamily="serif"
+            android:text="000"
+            android:textColor="@color/primary"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/room_no"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:text="@string/do_you_want_to_return_the_key"
             android:textColor="@color/primary" />
 
         <Button
             android:id="@+id/release_key"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_centerInParent="true"
             android:background="@drawable/circle"
             android:backgroundTint="@color/primary"
-            android:text="Release Key"
+            android:text="@string/return_key"
+            android:clickable="true"
             android:textAllCaps="false"
             android:textColor="@color/white" />
 

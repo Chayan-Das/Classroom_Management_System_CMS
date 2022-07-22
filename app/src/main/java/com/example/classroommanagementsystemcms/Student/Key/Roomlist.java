@@ -18,6 +18,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.classroommanagementsystemcms.R;
+import com.example.classroommanagementsystemcms.Staff.Maintanance.Addkey;
 import com.example.classroommanagementsystemcms.Staff.Maintanance.BatchActivity;
 import com.example.classroommanagementsystemcms.Staff.Maintanance.BatchDetailsStaff;
 import com.example.classroommanagementsystemcms.Staff.Maintanance.Batchmodel;
@@ -40,6 +41,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.SimpleTimeZone;
+import java.util.UUID;
 
 public class Roomlist extends FirebaseRecyclerAdapter<Roommodel, Roomlist.myviewholder> {
 
@@ -61,11 +63,11 @@ public class Roomlist extends FirebaseRecyclerAdapter<Roommodel, Roomlist.myview
                 final AlertDialog.Builder alert = new AlertDialog.Builder(v.getContext());
                 View mview =LayoutInflater.from(v.getContext()).inflate(R.layout.getkey, (ViewGroup) v, false);
 
-                final TextView room_no=(TextView) mview.findViewById(R.id.room_no);
-                ImageButton close_dialog = (ImageButton) mview.findViewById(R.id.close_dialog);
-                RelativeLayout success_message = (RelativeLayout) mview.findViewById(R.id.success_message);
-                RelativeLayout l1 = (RelativeLayout) mview.findViewById(R.id.l1);
-                Button coform_purchase=(Button) mview.findViewById(R.id.coform_purchase);
+                final TextView room_no= mview.findViewById(R.id.room_no);
+                ImageButton close_dialog = mview.findViewById(R.id.close_dialog);
+                RelativeLayout success_message = mview.findViewById(R.id.success_message);
+                RelativeLayout l1 = mview.findViewById(R.id.l1);
+                Button coform_purchase= mview.findViewById(R.id.coform_purchase);
 
                 alert.setView(mview);
 
@@ -87,9 +89,13 @@ public class Roomlist extends FirebaseRecyclerAdapter<Roommodel, Roomlist.myview
                     @Override
                     public void onClick(View view) {
 
+                        String roomno = model.getRoomname();
+                        String rid = model.getId();
+
 
                         FirebaseAuth fAuth;
                         fAuth= FirebaseAuth.getInstance();
+
 
                         DatabaseReference ref= FirebaseDatabase.getInstance().getReference("Student_Account");
                         ref.orderByChild("studentid").equalTo(fAuth.getUid()).addValueEventListener(new ValueEventListener() {
@@ -101,33 +107,33 @@ public class Roomlist extends FirebaseRecyclerAdapter<Roommodel, Roomlist.myview
                                     String roll = ""+ds.child("Roll").getValue();
                                     String phone = ""+ds.child("Phone Number").getValue();
 
+                                    DatabaseReference ref8= FirebaseDatabase.getInstance().getReference("Key Purchase Record");
 
-
-
-                                    String date = new SimpleDateFormat("dd/MM/yyyy" ).format(Calendar.getInstance().getTime());
+                                    String date = new SimpleDateFormat("dd-MM-yyyy" ).format(Calendar.getInstance().getTime());
 
                                     String time = new SimpleDateFormat("hh:mm aa" ).format(Calendar.getInstance().getTime());
 
 
-                                    String purchase_id = ""+System.currentTimeMillis();
+
 
                                     HashMap<String, Object> hashMap1 = new HashMap<>();
-                                    hashMap1.put("purchaseid",""+purchase_id);
-                                    hashMap1.put("Student Name",""+name);
-                                    hashMap1.put("Roll",""+roll);
-                                    hashMap1.put("Phone no",""+phone);
-                                    hashMap1.put("Date",""+date);
-                                    hashMap1.put("Purchase Time",""+time);
+                                    hashMap1.put("getkeyid",""+date+"_"+time);
+                                    hashMap1.put("studentname",""+name);
+                                    hashMap1.put("roll",""+roll);
+                                    hashMap1.put("phoneno",""+phone);
+                                    hashMap1.put("date",""+date);
+                                    hashMap1.put("purchasetime",""+time);
+                                    hashMap1.put("roomno",""+roomno);
 
-                                    hashMap1.put("Room no",""+model.getRoomname());
 
-                                    DatabaseReference ref8= FirebaseDatabase.getInstance().getReference("Key Purchase Record");
-                                    ref8.child(purchase_id+roll).setValue(hashMap1)
+
+
+                                    ref8.child(date+"_"+time).setValue(hashMap1)
                                             .addOnSuccessListener(new OnSuccessListener<Void>() {
                                                 @Override
                                                 public void onSuccess(Void unused) {
 
-                                                    Otheroperation();
+
 
                                                 }
                                             }).addOnFailureListener(new OnFailureListener() {
@@ -139,8 +145,37 @@ public class Roomlist extends FirebaseRecyclerAdapter<Roommodel, Roomlist.myview
 
 
 
+                                    HashMap<String, Object> hashMap2 = new HashMap<>();
+                                    hashMap2.put("Purchase Room",""+rid);
+                                    hashMap2.put("Purchase id",""+date+"_"+time);
+
+                                    String Sid = ""+ds.child("studentid").getValue();
 
 
+                                    DatabaseReference ref2= FirebaseDatabase.getInstance().getReference("Student_Account").child(Sid);
+                                    ref2.updateChildren(hashMap2).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                        @Override
+                                        public void onSuccess(Void unused) {
+
+                                        }
+                                    });
+
+
+
+                                    HashMap<String, Object> hashMap3 = new HashMap<>();
+                                    hashMap3.put("purchasedby",""+name);
+
+
+                                    DatabaseReference ref3= FirebaseDatabase.getInstance().getReference("Rooms").child(rid);
+                                    ref3.updateChildren(hashMap3).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                        @Override
+                                        public void onSuccess(Void unused) {
+
+                                            l1.setVisibility(View.GONE);
+                                            success_message.setVisibility(View.VISIBLE);
+
+                                        }
+                                    });
 
 
                                 }
@@ -151,10 +186,6 @@ public class Roomlist extends FirebaseRecyclerAdapter<Roommodel, Roomlist.myview
 
                             }
                         });
-
-
-
-
 
 
 
@@ -165,94 +196,18 @@ public class Roomlist extends FirebaseRecyclerAdapter<Roommodel, Roomlist.myview
                 });
 
 
-
                 alertDialog.show();
 
-
-
-
-
-
-
-
-
             }
 
-            private void Otheroperation() {
-                FirebaseAuth fAuth;
-                fAuth= FirebaseAuth.getInstance();
 
-                DatabaseReference refe= FirebaseDatabase.getInstance().getReference("Student_Account");
-                        refe.orderByChild("studentid").equalTo(fAuth.getUid()).addValueEventListener(new ValueEventListener() {
-                            @Override
-                            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                for(DataSnapshot ds: snapshot.getChildren()){
-
-                                    String name = ""+ds.child("Name").getValue();
-                                    String roll = ""+ds.child("Roll").getValue();
-                                    String phone = ""+ds.child("Phone Number").getValue();
-
-                                    HashMap<String, Object> hashMap2 = new HashMap<>();
-                                    hashMap2.put("Purchase Room",""+model.getRoomname());
-
-                                    String Sid = ""+ds.child("studentid").getValue();
-
-
-                                    DatabaseReference ref2= FirebaseDatabase.getInstance().getReference("Student_Account").child(Sid);
-                                    ref2.updateChildren(hashMap2).addOnSuccessListener(new OnSuccessListener<Void>() {
-                                        @Override
-                                        public void onSuccess(Void unused) {
-
-
-
-                                        }
-                                    });
-
-
-
-                                    HashMap<String, Object> hashMap3 = new HashMap<>();
-                                    hashMap3.put("purchasedby",""+name);
-
-                                    String rid = model.getId();
-
-
-                                    DatabaseReference ref3= FirebaseDatabase.getInstance().getReference("Rooms").child(rid);
-                                    ref3.updateChildren(hashMap3).addOnSuccessListener(new OnSuccessListener<Void>() {
-                                        @Override
-                                        public void onSuccess(Void unused) {
-
-
-
-
-
-                                        }
-                                    });
-
-
-
-
-
-
-
-
-                                }
-                            }
-
-                            @Override
-                            public void onCancelled(@NonNull DatabaseError error) {
-
-                            }
-                        });
-
-
-
-            }
         });
 
 
 
 
     }
+
 
 
 
@@ -277,4 +232,5 @@ public class Roomlist extends FirebaseRecyclerAdapter<Roommodel, Roomlist.myview
             next=view.findViewById(R.id.next);
         }
     }
+
 }

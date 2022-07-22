@@ -83,6 +83,7 @@ public class DashboardFragment extends Fragment {
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
 
+
         pro_image=view.findViewById(R.id.pro_image);
 
         FirebaseAuth fAuth;

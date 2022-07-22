@@ -46,8 +46,7 @@ public class StudentProfile extends AppCompatActivity {
         my_batch = findViewById(R.id.my_batch);
         my_email = findViewById(R.id.my_email);
         backBtn = findViewById(R.id.backBtn);
-        batchcard = findViewById(R.id.batchcard);
-        cr_pref = findViewById(R.id.cr_pref);
+
 
 
 
@@ -72,11 +71,20 @@ public class StudentProfile extends AppCompatActivity {
                     my_email.setText(email);
                     my_batch.setText(batch);
 
-                    try {
-                        Glide.with(StudentProfile.this).load(image).into(pro_image);
-                    } catch (Exception e) {
+                    if(!image.isEmpty()){
+
+                        try {
+                            Glide.with(StudentProfile.this).load(image).into(pro_image);
+                        } catch (Exception e) {
+
+                        }
+                    }
+
+                    else {
 
                     }
+
+
 
                 }
 

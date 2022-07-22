@@ -237,7 +237,7 @@ public class Signup extends AppCompatActivity {
                                 hashMap.put("Email",""+email);
                                 hashMap.put("Roll",""+roll);
                                 hashMap.put("Phone Number",""+Phone);
-                                hashMap.put("Role","Student");
+                                hashMap.put("Role","");
                                 hashMap.put("Batch","2k"+roll.substring(0,2));
                                 hashMap.put("Type","Regular");
                                 hashMap.put("Purchase Room","No");

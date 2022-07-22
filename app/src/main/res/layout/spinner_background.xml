@@ -2,9 +2,9 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:maxLines="1"
-    android:textSize="20sp"
+    android:textSize="15sp"
     android:ellipsize="end"
-    android:padding="10dp"
+    android:padding="9dp"
     android:layout_margin="10dp"
     android:textAppearance="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
     />

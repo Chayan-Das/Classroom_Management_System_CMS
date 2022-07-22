@@ -50,6 +50,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@id/header"
         >
 
         <LinearLayout
@@ -73,11 +74,11 @@
                         android:id="@+id/date"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="55dp"
                         android:layout_marginTop="10dp"
                         android:layout_marginLeft="20dp"
                         android:layout_marginRight="20dp"
-                        android:hint="Date"
+                        android:hint="@string/date_dd_mm_yyyy"
                         android:textColorHint="@color/primary"
                         app:boxStrokeColor="@color/primary"
                         app:endIconMode="clear_text"
@@ -87,11 +88,36 @@
                         <com.google.android.material.textfield.TextInputEditText
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:inputType="date" />
+                            android:inputType="date"/>
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:layout_below="@id/date"
+                        android:id="@+id/l3"
+                        android:layout_below="@+id/date"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginTop="20dp"
+                        android:hint="@string/day"
+                        android:textColorHint="@color/primary"
+                        app:boxStrokeColor="@color/primary"
+                        app:startIconDrawable="@drawable/ic_outline_calendar_today_24"
+                        app:startIconTint="@color/primary">
+
+                        <AutoCompleteTextView
+                            android:id="@+id/day"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:inputType="none"
+                            android:maxLines="2"
+                            />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_below="@id/l3"
                         android:id="@+id/lb2"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                         android:layout_width="match_parent"
@@ -201,41 +227,7 @@
 
                     </LinearLayout>
 
-                    <CheckBox
-                        android:id="@+id/need_projector"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/lb4"
-                        android:layout_marginStart="15dp"
-                        android:layout_marginTop="20dp"
-                        android:buttonTint="@color/primary"
-                        android:text="Need a projector"
-                        android:textColor="@color/primary"
-                        />
 
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:layout_below="@id/need_projector"
-                        android:id="@+id/lb5"
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-                        android:layout_width="match_parent"
-                        android:layout_height="55dp"
-                        android:layout_marginLeft="15dp"
-                        android:layout_marginRight="15dp"
-                        android:layout_marginTop="20dp"
-                        android:hint="@string/projector"
-                        android:textColorHint="@color/primary"
-                        app:boxStrokeColor="@color/primary"
-                        app:startIconDrawable="@drawable/ic_color_person_24"
-                        app:startIconTint="@color/primary">
-
-                        <AutoCompleteTextView
-                            android:id="@+id/projector_name"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:inputType="none"
-                            />
-                    </com.google.android.material.textfield.TextInputLayout>
 
 
                 </RelativeLayout>
@@ -251,6 +243,7 @@
                 android:layout_marginTop="40dp"
                 android:text="Create"
                 android:textColor="@color/white"
+                android:layout_marginBottom="20dp"
                 />
 
         </LinearLayout>

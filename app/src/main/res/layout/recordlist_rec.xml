@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:id="@id/chip2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/cd_1">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/academicyearcard"
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="20dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="5dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+
+                <TextView
+                    android:id="@+id/s_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/date"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="serif"
+                    android:gravity="center"
+                    android:text="Student Name"
+                    android:textColor="@color/primary"
+                    tools:ignore="RtlCompas_namet" />
+
+
+                <TextView
+                    android:id="@+id/roll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/s_name"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="serif"
+                    android:gravity="center"
+                    android:text="Student id"
+                    android:textColor="@color/primary"
+                    tools:ignore="RtlCompat" />
+
+                <TextView
+                    android:id="@+id/room_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/roll"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="serif"
+                    android:gravity="center"
+                    android:text="room"
+                    android:textColor="@color/primary"
+                    tools:ignore="RtlCompat" />
+
+                <TextView
+                    android:id="@+id/phone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/room_name"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="serif"
+                    android:gravity="center"
+                    android:text="phone"
+                    android:textColor="@color/primary"
+                    tools:ignore="RtlCompat" />
+
+
+                <TextView
+                    android:id="@+id/date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="serif"
+                    android:gravity="center"
+                    android:text="date"
+                    android:textStyle="bold"
+                    android:textColor="@color/primary"
+                    tools:ignore="RtlCompat" />
+
+                <TextView
+                    android:id="@+id/indicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:fontFamily="serif"
+                    android:gravity="center"
+                    android:text="Released"
+                    android:textColor="#42C824"
+                    android:textStyle="italic"
+                    android:visibility="gone"
+                    android:textSize="13sp"
+                    tools:ignore="RtlCompat" />
+
+
+            </RelativeLayout>
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

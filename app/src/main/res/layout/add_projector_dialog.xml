@@ -1,0 +1,134 @@
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="5dp"
+    android:layout_margin="10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#00000000">
+
+    <RelativeLayout
+        android:id="@+id/l1"
+        android:layout_width="match_parent"
+        android:layout_height="150dp">
+
+        <ImageButton
+            android:id="@+id/close_dialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="10dp"
+            android:background="@null"
+            android:src="@drawable/ic_baseline_close_24"
+            android:tint="#F30000" />
+
+
+        <RelativeLayout
+            android:id="@+id/level2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="30dp"
+            android:elevation="5dp">
+
+
+            <TextView
+                android:id="@+id/level1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:text="Create new Projector"
+                android:textColor="@color/primary"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@id/level2"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_below="@id/level1"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/create_projector"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="56dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="3"
+                    app:boxStrokeColor="@color/primary"
+                    app:endIconMode="clear_text"
+                    app:startIconDrawable="@drawable/ic_outline_calendar_today_24"
+                    app:startIconTint="@color/primary">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
+                        android:text="Projector- "
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Button
+                    android:id="@+id/save_projector"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="4dp"
+                    android:background="@color/primary"
+                    android:text="Add"
+                    android:textColor="@color/white" />
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:visibility="gone"
+        android:id="@+id/success_message"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        >
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/success_sign"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="4dp"
+            android:background="@drawable/circle"
+            android:backgroundTint="@color/primary"
+            android:elevation="6dp"
+            android:src="@drawable/ic_baseline_check_24"
+            />
+
+        <TextView
+            android:layout_below="@id/success_sign"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="Success"
+            android:textSize="18sp"
+            android:textColor="@color/primary"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            />
+
+    </RelativeLayout>
+
+
+
+
+
+
+</com.google.android.material.card.MaterialCardView>

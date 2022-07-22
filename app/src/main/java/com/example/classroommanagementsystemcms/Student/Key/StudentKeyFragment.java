@@ -1,9 +1,11 @@
 package com.example.classroommanagementsystemcms.Student.Key;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -12,9 +14,17 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import com.bumptech.glide.Glide;
 import com.example.classroommanagementsystemcms.R;
 import com.example.classroommanagementsystemcms.Student.Dashboard.DashboardFragment;
+import com.example.classroommanagementsystemcms.Student.StudentProfile;
 import com.google.android.material.tabs.TabLayout;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
@@ -23,6 +33,7 @@ public class StudentKeyFragment extends Fragment {
 
     TabLayout tabLayout;
     ViewPager viewPager;
+    ImageView pro_image;
 
 
     public StudentKeyFragment() {
@@ -53,11 +64,55 @@ public class StudentKeyFragment extends Fragment {
 
         DashboardFragment.MainAdapter adapter=new DashboardFragment.MainAdapter(getChildFragmentManager());
 
-        adapter.AddFragment(new ScheduleKeyFragment(),"Purchased Key");
-        adapter.AddFragment(new CustomKeyFragment(),"Custom Purchase");
+        adapter.AddFragment(new CustomKeyFragment(),"Get Key");
+        adapter.AddFragment(new ScheduleKeyFragment(),"Release Key");
 
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
+
+
+        pro_image=view.findViewById(R.id.pro_image);
+
+        FirebaseAuth fAuth;
+        fAuth= FirebaseAuth.getInstance();
+
+        DatabaseReference ref= FirebaseDatabase.getInstance().getReference("Student_Account");
+        ref.orderByChild("studentid").equalTo(fAuth.getUid()).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for(DataSnapshot ds: snapshot.getChildren()){
+
+
+                    String image = ""+ds.child("ProfileImage").getValue();
+
+
+
+                    try {
+                        Glide.with(getActivity()).load(image).into(pro_image);
+                    } catch (Exception e) {
+
+                    }
+
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
+        pro_image.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity().getApplicationContext(), StudentProfile.class));
+            }
+        });
+
+
+
     }
 
     static class MainAdapter extends FragmentPagerAdapter {

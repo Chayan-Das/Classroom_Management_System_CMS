@@ -19,9 +19,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ClassroomManagementSystemCMS">
         <activity
+            android:name=".Staff.StaffLogin"
+            android:exported="false" />
+        <activity
+            android:name=".Staff.Maintanance.AddProjector"
+            android:exported="false" />
+        <activity
+            android:name=".Staff.Maintanance.Year.UploadSyllebus"
+            android:exported="false" />
+        <activity
             android:name=".Student.StudentMain1Activity"
             android:exported="true"
-            android:windowSoftInputMode="adjustResize|adjustPan" />
+            android:windowSoftInputMode="adjustResize|adjustPan"></activity>
         <activity
             android:name=".Staff.Maintanance.BatchDetailsStaff"
             android:exported="false" />
@@ -52,6 +61,7 @@
             </intent-filter>
 
         </activity>
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -62,15 +72,7 @@
             android:exported="true" />
         <activity
             android:name=".Staff.Maintanance.Addkey"
-            android:exported="true">
-
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
-        </activity>
+            android:exported="true"></activity>
     </application>
 
 </manifest>

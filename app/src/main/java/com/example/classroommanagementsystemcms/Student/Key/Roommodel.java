@@ -5,16 +5,14 @@ public class Roommodel {
     public Roommodel() {
     }
 
-    public String roomname,type,building,status,purchasedby,id;
+    public String roomname,type,building,purchasedby,id;
 
-    public Roommodel(String roomname, String type, String building, String status, String purchasedby, String id) {
+    public Roommodel(String roomname, String type, String building, String purchasedby, String id) {
         this.roomname = roomname;
         this.type = type;
         this.building = building;
-        this.status = status;
         this.purchasedby = purchasedby;
         this.id = id;
-
     }
 
     public String getRoomname() {
@@ -39,14 +37,6 @@ public class Roommodel {
 
     public void setBuilding(String building) {
         this.building = building;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
     }
 
     public String getPurchasedby() {

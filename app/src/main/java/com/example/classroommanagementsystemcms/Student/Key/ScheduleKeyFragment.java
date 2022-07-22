@@ -1,5 +1,6 @@
 package com.example.classroommanagementsystemcms.Student.Key;
 
+import android.app.FragmentTransaction;
 import android.icu.text.SimpleDateFormat;
 import android.os.Bundle;
 
@@ -12,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.classroommanagementsystemcms.R;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -29,7 +31,7 @@ import java.util.HashMap;
 
 public class ScheduleKeyFragment extends Fragment {
 
-    TextView room_no, no_key;
+    TextView room_no;
     Button release_key;
     RelativeLayout purchase_status;
 
@@ -59,7 +61,6 @@ public class ScheduleKeyFragment extends Fragment {
 
         room_no=view.findViewById(R.id.room_no);
         release_key=view.findViewById(R.id.release_key);
-        no_key=view.findViewById(R.id.no_key);
         purchase_status=view.findViewById(R.id.purchase_status);
 
 
@@ -76,18 +77,18 @@ public class ScheduleKeyFragment extends Fragment {
                     String roomno = ""+ds.child("Purchase Room").getValue();
 
 
-
-
                     if(roomno.isEmpty()){
 
-                        no_key.setVisibility(View.VISIBLE);
-                        purchase_status.setVisibility(View.GONE);
+                        release_key.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                Toast.makeText(getActivity(), "No key is occupied", Toast.LENGTH_LONG).show();
+                            }
+                        });
 
                     }
 
                     else {
-                        no_key.setVisibility(View.GONE);
-                        purchase_status.setVisibility(View.VISIBLE);
 
                         room_no.setText(roomno);
 
@@ -105,7 +106,21 @@ public class ScheduleKeyFragment extends Fragment {
                                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                                         for(DataSnapshot ds: snapshot.getChildren()){
 
-                                            String accessid = ""+ds.child("studentid").getValue();
+                                            String id = ""+ds.child("Purchase Room").getValue();
+
+
+                                            HashMap<String, Object> hashMap3 = new HashMap<>();
+                                            hashMap3.put("purchasedby","empty");
+
+                                            DatabaseReference ref2= FirebaseDatabase.getInstance().getReference("Rooms").child(id);
+                                            ref2.updateChildren(hashMap3).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                @Override
+                                                public void onSuccess(Void unused) {
+
+
+
+                                                }
+                                            });
 
 
                                             HashMap<String, Object> hashMap2 = new HashMap<>();
@@ -113,18 +128,40 @@ public class ScheduleKeyFragment extends Fragment {
 
 
 
-                                            DatabaseReference ref2= FirebaseDatabase.getInstance().getReference("Student_Account").child(accessid);
-                                            ref2.updateChildren(hashMap2).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                            DatabaseReference ref3= FirebaseDatabase.getInstance().getReference("Student_Account").child(accessid);
+                                            ref3.updateChildren(hashMap2).addOnSuccessListener(new OnSuccessListener<Void>() {
                                                 @Override
                                                 public void onSuccess(Void unused) {
 
-                                                    Other();
 
 
                                                 }
                                             }).addOnFailureListener(new OnFailureListener() {
                                                 @Override
                                                 public void onFailure(@NonNull Exception e) {
+
+                                                }
+                                            });
+
+
+
+                                            String pid = ""+ds.child("Purchase id").getValue();
+
+
+                                            String time = new SimpleDateFormat("hh:mm aa" ).format(Calendar.getInstance().getTime());
+
+                                            HashMap<String, Object> hashMap4 = new HashMap<>();
+                                            hashMap4.put("returntime",""+time);
+
+
+                                            DatabaseReference ref4= FirebaseDatabase.getInstance().getReference("Key Purchase Record").child(pid);
+                                            ref4.updateChildren(hashMap4).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                @Override
+                                                public void onSuccess(Void unused) {
+
+                                                    Toast.makeText(getActivity(), "Key is now free", Toast.LENGTH_LONG).show();
+
+
 
                                                 }
                                             });
@@ -139,7 +176,6 @@ public class ScheduleKeyFragment extends Fragment {
 
                                     }
                                 });
-
 
 
 
@@ -162,92 +198,10 @@ public class ScheduleKeyFragment extends Fragment {
             }
         });
 
-
-
-
-
-
     }
 
-    private void Other() {
-
-        DatabaseReference ref= FirebaseDatabase.getInstance().getReference("Rooms");
-        ref.orderByChild("id").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for(DataSnapshot ds: snapshot.getChildren()){
-
-                    String rid = ""+ds.child("id").getValue();
-
-                    HashMap<String, Object> hashMap3 = new HashMap<>();
-                    hashMap3.put("purchasedby","empty");
-
-                    DatabaseReference ref2= FirebaseDatabase.getInstance().getReference("Rooms").child(rid);
-                    ref2.updateChildren(hashMap3).addOnSuccessListener(new OnSuccessListener<Void>() {
-                        @Override
-                        public void onSuccess(Void unused) {
 
 
-
-                            other1();
-
-                        }
-                    });
-
-
-
-                }
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-    }
-
-    private void other1() {
-
-        DatabaseReference refer= FirebaseDatabase.getInstance().getReference("Key Purchase Record");
-        refer.orderByChild("purchaseid").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for(DataSnapshot ds: snapshot.getChildren()){
-
-                    String time = new SimpleDateFormat("hh:mm aa" ).format(Calendar.getInstance().getTime());
-                    String purchaseidd = ""+ds.child("purchaseid").getValue();
-
-                    HashMap<String, Object> hashMap4 = new HashMap<>();
-                    hashMap4.put("Release Time",""+time);
-
-
-                    DatabaseReference ref4= FirebaseDatabase.getInstance().getReference("Key Purchase Record").child(purchaseidd);
-                    ref4.updateChildren(hashMap4).addOnSuccessListener(new OnSuccessListener<Void>() {
-                        @Override
-                        public void onSuccess(Void unused) {
-
-
-
-                        }
-                    });
-
-
-
-
-
-
-
-                }
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-    }
 
 
 }

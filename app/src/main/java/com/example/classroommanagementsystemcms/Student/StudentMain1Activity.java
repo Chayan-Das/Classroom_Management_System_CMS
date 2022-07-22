@@ -1,20 +1,37 @@
 package com.example.classroommanagementsystemcms.Student;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 
 import com.etebarian.meowbottomnavigation.MeowBottomNavigation;
+import com.example.classroommanagementsystemcms.MainActivity;
 import com.example.classroommanagementsystemcms.R;
+import com.example.classroommanagementsystemcms.SplashScreen;
 import com.example.classroommanagementsystemcms.Student.CR.CRFragment;
 import com.example.classroommanagementsystemcms.Student.Dashboard.DashboardFragment;
 import com.example.classroommanagementsystemcms.Student.Course.DownloadFragment;
 import com.example.classroommanagementsystemcms.Student.Key.StudentKeyFragment;
-import com.google.firebase.database.core.Context;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.HashMap;
 
 public class StudentMain1Activity extends AppCompatActivity {
 
@@ -26,10 +43,7 @@ public class StudentMain1Activity extends AppCompatActivity {
         setContentView(R.layout.activity_student_main);
 
         meo=(MeowBottomNavigation)findViewById(R.id.bottom_nav);
-        meo.add(new MeowBottomNavigation.Model(1,R.drawable.ic_baseline_dashboard_24));
-        meo.add(new MeowBottomNavigation.Model(2,R.drawable.ic_baseline_vpn_key_24));
-        meo.add(new MeowBottomNavigation.Model(3,R.drawable.ic_baseline_cr_preferences_24));
-        meo.add(new MeowBottomNavigation.Model(4,R.drawable.ic_baseline_cloud_download_24));
+        meo.add(new MeowBottomNavigation.Model(1,R.drawable.ic_baseline_vpn_key_24));
 
 
 
@@ -42,18 +56,9 @@ public class StudentMain1Activity extends AppCompatActivity {
 
                 switch (item.getId()){
                     case 1:
-                        fragment=new DashboardFragment();
-                        break;
-                    case 2:
                         fragment=new StudentKeyFragment();
                         break;
-                    case 3:
-                        fragment=new CRFragment();
-                        break;
 
-                    case 4:
-                        fragment=new DownloadFragment();
-                        break;
                 }
 
                 loadFragment(fragment);
@@ -77,6 +82,8 @@ public class StudentMain1Activity extends AppCompatActivity {
         });
     }
 
+
+
     private void loadFragment(Fragment fragment) {
 
         getSupportFragmentManager()
@@ -84,6 +91,8 @@ public class StudentMain1Activity extends AppCompatActivity {
                 .replace(R.id.fragment_container,fragment)
                 .commit();
     }
+
+
 
 
 }

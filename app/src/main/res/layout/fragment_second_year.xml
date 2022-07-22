@@ -60,15 +60,29 @@
         android:id="@+id/show_routine"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_marginBottom="10dp"
+        android:layout_alignParentBottom="true"
         android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
         android:backgroundTint="@color/primary"
+        android:contentDescription="TODO"
         android:elevation="3dp"
         android:src="@drawable/ic_baseline_routine_chart_24"
-        android:tint="@color/white"
-        android:contentDescription="TODO" />
+        android:tint="@color/white" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/show_syllebus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="85dp"
+        android:backgroundTint="@color/primary"
+        android:contentDescription="TODO"
+        android:elevation="3dp"
+        android:src="@drawable/ic_baseline_routine_chart_24"
+        android:tint="@color/white" />
 
 
 </RelativeLayout>

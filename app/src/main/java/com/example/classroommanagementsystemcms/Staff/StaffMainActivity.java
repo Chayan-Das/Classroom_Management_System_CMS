@@ -4,6 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+import android.widget.Toast;
 
 import com.etebarian.meowbottomnavigation.MeowBottomNavigation;
 import com.example.classroommanagementsystemcms.R;
@@ -14,6 +17,29 @@ public class StaffMainActivity extends AppCompatActivity {
 
     MeowBottomNavigation meo;
 
+
+
+    boolean doubleBackToExitPressedOnce = false;
+
+    @Override
+    public void onBackPressed() {
+        if (doubleBackToExitPressedOnce) {
+            super.onBackPressed();
+            return;
+        }
+
+        this.doubleBackToExitPressedOnce = true;
+        Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
+
+        new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+
+            @Override
+            public void run() {
+                doubleBackToExitPressedOnce=false;
+            }
+        }, 2000);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,8 +47,8 @@ public class StaffMainActivity extends AppCompatActivity {
 
         meo=(MeowBottomNavigation)findViewById(R.id.bottom_nav);
         meo.add(new MeowBottomNavigation.Model(1,R.drawable.ic_baseline_dashboard_24));
-        meo.add(new MeowBottomNavigation.Model(2,R.drawable.ic_baseline_report_alt_24));
-        meo.add(new MeowBottomNavigation.Model(3,R.drawable.ic_baseline_maintanance_services_24));
+        meo.add(new MeowBottomNavigation.Model(2,R.drawable.key));
+
 
 
 
@@ -35,13 +61,10 @@ public class StaffMainActivity extends AppCompatActivity {
 
                 switch (item.getId()){
                     case 1:
-                        fragment=new StaffDashboardFragment();
+                        fragment=new MaintananceFragment();
                         break;
                     case 2:
                         fragment=new KeyReportFragment();
-                        break;
-                    case 3:
-                        fragment=new MaintananceFragment();
                         break;
 
                 }

@@ -151,8 +151,6 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="125"
-                                android:textStyle="bold"
-                                android:inputType="number"
                                 android:paddingTop="10dp"
                                 android:textColor="@color/black"/>
 
@@ -161,7 +159,7 @@
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="#6A6A6E"
+                            android:background="#A3A3A7"
                             android:layout_marginTop="5dp"
                             android:layout_marginBottom="5dp"
                             />
@@ -172,19 +170,18 @@
                             android:layout_width="0dp"
                             android:layout_weight="1"
                             android:layout_height="match_parent">
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Year"
-                                android:textStyle="bold"
+                                android:text="Room No"
                                 android:textColor="@color/primary"
-                                />
+                                android:textStyle="bold" />
                             <TextView
                                 android:id="@+id/my_year"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="360"
-                                android:textStyle="bold"
+                                android:text="None"
                                 android:paddingTop="10dp"
                                 android:textColor="@color/black"/>
 
@@ -193,7 +190,7 @@
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="#6A6A6E"
+                            android:background="#A3A3A7"
                             android:layout_marginTop="5dp"
                             android:layout_marginBottom="5dp"
                             />
@@ -216,7 +213,6 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="360"
-                                android:textStyle="bold"
                                 android:paddingTop="10dp"
                                 android:textColor="@color/black"/>
 
@@ -249,89 +245,6 @@
             </LinearLayout>
 
 
-
-            <RelativeLayout
-                android:id="@+id/cr_pref"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                >
-
-                <View
-                    android:layout_width="wrap_content"
-                    android:layout_height="1dp"
-                    android:background="#8F8F8F"/>
-
-                <TextView
-                    android:id="@+id/la"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:text="CR Preferences:"
-                    android:textColor="@color/black"
-                    android:textSize="19sp"
-                    android:textStyle="bold" />
-
-                <LinearLayout
-                    android:id="@+id/l1"
-                    android:layout_below="@id/la"
-                    android:layout_width="match_parent"
-                    android:layout_height="140dp"
-                    android:layout_marginTop="15dp"
-                    android:orientation="horizontal"
-                    android:layout_weight="1"
-                    android:clipToPadding="false"
-                    android:gravity="center">
-
-                    <com.google.android.material.card.MaterialCardView
-                        android:id="@+id/batchcard"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:layout_margin="10dp"
-                        app:cardElevation="5dp"
-                        >
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:gravity="center"
-                            android:orientation="vertical">
-
-                            <ImageView
-                                android:layout_width="54dp"
-                                android:layout_height="54dp"
-                                android:padding="2dp"
-                                android:src="@drawable/classroom"
-                                app:tint="#0A0F37" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Batch"
-                                android:textStyle="bold"
-                                android:layout_marginTop="5dp"
-                                android:textSize="15sp"
-                                android:fontFamily="serif"
-                                android:textColor="#0A0F37"/>
-
-
-                        </LinearLayout>
-
-
-
-                    </com.google.android.material.card.MaterialCardView>
-
-
-
-                </LinearLayout>
-
-
-
-
-            </RelativeLayout>
 
 
         </LinearLayout>

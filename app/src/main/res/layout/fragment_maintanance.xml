@@ -17,7 +17,7 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:fontFamily="serif"
-            android:text="Maintanance"
+            android:text="CMS"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="15sp"
@@ -26,12 +26,11 @@
 
         <ImageView
             android:layout_width="47dp"
-            android:layout_height="47dp"
+            android:layout_height="match_parent"
             android:layout_centerVertical="true"
+            android:layout_marginStart="5dp"
             android:background="@null"
-            android:padding="5dp"
-            android:src="@drawable/ic_baseline_maintanance_services_24"
-            app:tint="@color/white" />
+            android:src="@drawable/logo" />
 
 
     </RelativeLayout>
@@ -54,9 +53,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
                 android:layout_centerInParent="true"
-                android:fontFamily="sans-serif-black"
+                android:fontFamily="serif"
                 android:text="JUST CSE"
                 android:textColor="#FFFFFF"
                 android:textSize="28sp"
@@ -70,255 +68,95 @@
 
     </RelativeLayout>
 
-    <ScrollView
-        android:layout_below="@+id/chip1"
+    <RelativeLayout
+        android:id="@id/chip2"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/chip1"
+        android:background="@drawable/cd_1">
 
-        <RelativeLayout
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/academicyearcard"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@+id/chip1"
-            android:background="@drawable/cd_1">
+            android:layout_height="70dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="20dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="5dp">
 
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/academicyearcard"
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="10dp"
-                app:cardBackgroundColor="#0A0F37"
-                android:layout_marginBottom="20dp"
-                app:cardCornerRadius="10dp"
-                app:cardElevation="5dp">
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center">
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
+                <ImageView
+                    android:id="@+id/a"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/classroom"
+                    app:tint="@color/primary" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:gravity="center">
-
-                    <ImageView
-                        android:id="@+id/a"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="5dp"
-                        android:src="@drawable/academic"
-                        app:tint="@color/white" />
-
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginStart="20dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_toRightOf="@id/a"
-                        android:fontFamily="sans-serif-black"
-                        android:gravity="center"
-                        android:text="Academic Year"
-                        android:textColor="@color/white"
-                        tools:ignore="RtlCompat" />
+                    android:layout_below="@id/a"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="serif"
+                    android:gravity="center"
+                    android:text="Create Room"
+                    android:textColor="@color/primary"
+                    android:textStyle="bold"
+                    tools:ignore="RtlCompat" />
 
 
-                </RelativeLayout>
+            </RelativeLayout>
 
 
-            </com.google.android.material.card.MaterialCardView>
-
-            <LinearLayout
-                android:id="@+id/l1"
-                android:layout_below="@id/academicyearcard"
-                android:layout_width="match_parent"
-                android:layout_height="140dp"
-                android:orientation="horizontal"
-                android:layout_weight="1"
-                android:clipToPadding="false"
-                android:gravity="center">
-
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/batchcard"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:layout_margin="10dp"
-                    app:cardElevation="5dp"
-                    >
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:layout_width="54dp"
-                            android:layout_height="54dp"
-                            android:padding="2dp"
-                            android:src="@drawable/classroom"
-                            app:tint="#0A0F37" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Batch"
-                            android:textStyle="bold"
-                            android:layout_marginTop="5dp"
-                            android:textSize="15sp"
-                            android:fontFamily="serif"
-                            android:textColor="#0A0F37"/>
+        </com.google.android.material.card.MaterialCardView>
 
 
-                    </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_below="@id/chip2"
+        android:id="@+id/portion1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp">
+
+        <TextView
+            android:id="@+id/text_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:text="All Rooms"
+            android:textColor="@color/primary"
+            android:textStyle="bold" />
 
 
+    </RelativeLayout>
 
-                </com.google.android.material.card.MaterialCardView>
-
-
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/roomcard"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:layout_margin="10dp"
-                    app:cardElevation="5dp"
-                    >
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:layout_width="54dp"
-                            android:layout_height="54dp"
-                            android:padding="2dp"
-                            android:src="@drawable/classroom"
-                            app:tint="#0A0F37" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Room"
-                            android:textStyle="bold"
-                            android:layout_marginTop="5dp"
-                            android:textSize="15sp"
-                            android:fontFamily="serif"
-                            android:textColor="#0A0F37"/>
-
-
-                    </LinearLayout>
-
-
-
-                </com.google.android.material.card.MaterialCardView>
-
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/syllebuscard"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:layout_margin="10dp"
-                    app:cardElevation="5dp"
-                    >
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:layout_width="54dp"
-                            android:layout_height="54dp"
-                            android:padding="2dp"
-                            android:src="@drawable/classroom"
-                            app:tint="#0A0F37" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Syllebus"
-                            android:textStyle="bold"
-                            android:layout_marginTop="5dp"
-                            android:textSize="15sp"
-                            android:fontFamily="serif"
-                            android:textColor="#0A0F37"/>
-
-
-                    </LinearLayout>
-
-
-
-                </com.google.android.material.card.MaterialCardView>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/l2"
-                android:layout_below="@id/l1"
-                android:layout_width="match_parent"
-                android:layout_height="140dp"
-                android:orientation="horizontal"
-                android:layout_weight="1"
-                android:clipToPadding="false"
-                android:gravity="center">
-
-
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/teacher_card"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:layout_margin="10dp"
-                    app:cardElevation="5dp"
-                    >
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:layout_width="54dp"
-                            android:layout_height="54dp"
-                            android:padding="2dp"
-                            android:src="@drawable/classroom"
-                            app:tint="#0A0F37" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Teacher"
-                            android:textStyle="bold"
-                            android:layout_marginTop="5dp"
-                            android:textSize="15sp"
-                            android:fontFamily="serif"
-                            android:textColor="#0A0F37"/>
-
-
-                    </LinearLayout>
-
-
-
-                </com.google.android.material.card.MaterialCardView>
-
-            </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/available_rooms_list"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/portion1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp" />
 
 
 
 
-        </RelativeLayout>
-
-
-
-    </ScrollView>
 
 
 
